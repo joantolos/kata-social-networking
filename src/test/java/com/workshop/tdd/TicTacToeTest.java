@@ -24,7 +24,13 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void shouldPlay(){
+    public void shouldMove(){
         Assert.assertEquals("Move done!", this.ticTacToe.play(1,1,1));
+    }
+
+    @Test
+    public void shouldntMode(){
+        this.ticTacToe.play(1,1,1);
+        Assert.assertEquals("Can not move there, position in use", this.ticTacToe.play(2,1,1));
     }
 }

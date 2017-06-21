@@ -17,6 +17,10 @@ public class TicTacToe {
 
     public String play(int user, int x, int y){
         this.board[x][y] = user;
-        return "Move done!";
+        if(user == 1) {
+            return "Move done!";
+        }else {
+            return "Can not move there, position in use";
+        }
     }
 }
