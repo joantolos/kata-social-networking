@@ -17,4 +17,9 @@ public class BoardTest {
     public void shouldCreateBoard(){
         Assert.assertNotNull(this.board);
     }
+
+    @Test
+    public void shouldMarksAsNotEmpty(){
+        Assert.assertFalse(this.board.isEmpty(1,1));
+    }
 }

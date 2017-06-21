@@ -10,4 +10,8 @@ public class Board {
     public Board(int x, int y){
         this.board = new Integer[x][y];
     }
+
+    public boolean isEmpty(int x, int y){
+        return false;
+    }
 }
