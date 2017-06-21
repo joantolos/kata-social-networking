@@ -29,7 +29,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void shouldntMode(){
+    public void shouldntMove(){
         this.ticTacToe.play(1,1,1);
         Assert.assertEquals("Can not move there, position in use", this.ticTacToe.play(2,1,1));
     }
