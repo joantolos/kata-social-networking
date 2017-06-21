@@ -13,9 +13,9 @@ public class TicTacToe {
         return this.board[x][y]==null;
     }
 
-    public String play(int player, int x, int y){
+    public String play(Player player, int x, int y){
         if(canMakeMove()){
-            return performMove(player, x, y);
+            return performMove(player.getId(), x, y);
         }
         return "Game over! Nobody wins";
     }
