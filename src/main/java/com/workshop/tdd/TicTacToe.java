@@ -15,26 +15,34 @@ public class TicTacToe {
 
     public String play(int player, int x, int y){
         if(canMakeMove()){
-            if(this.lastPlayer == player) {
-                return "Can not move again";
-            }
-            if(isPositionEmpty(x,y)) {
-                this.board[x][y] = player;
-                this.lastPlayer = player;
-                return "Move done!";
-            }else {
-                return "Can not move there, position in use";
-            }
+            return performMove(player, x, y);
         }
         return "Game over! Nobody wins";
     }
 
+    private String performMove(int player, int x, int y) {
+        if(this.lastPlayer == player) {
+            return "Can not move again";
+        }
+        if(isPositionEmpty(x,y)) {
+            this.board[x][y] = player;
+            this.lastPlayer = player;
+            return "Move done!";
+        }
+        return "Can not move there, position in use";
+    }
+
     public boolean canMakeMove(){
         for (int x=0; x<this.board.length; x++){
-            for (int y=0; y<this.board[x].length; y++) {
-                if(isPositionEmpty(x,y)){
-                    return true;
-                }
+            if (isPositionAvailableOnRow(x)) return true;
+        }
+        return false;
+    }
+
+    private boolean isPositionAvailableOnRow(int x) {
+        for (int y=0; y<this.board[x].length; y++) {
+            if(isPositionEmpty(x,y)){
+                return true;
             }
         }
         return false;
