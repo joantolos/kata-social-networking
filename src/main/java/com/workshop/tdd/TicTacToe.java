@@ -14,19 +14,19 @@ public class TicTacToe {
     }
 
     public String play(int player, int x, int y){
-        if(player == 3){
-            return "Game over! Nobody wins";
+        if(canMakeMove()){
+            if(this.lastPlayer == player) {
+                return "Can not move again";
+            }
+            if(isPositionEmpty(x,y)) {
+                this.board[x][y] = player;
+                this.lastPlayer = player;
+                return "Move done!";
+            }else {
+                return "Can not move there, position in use";
+            }
         }
-        if(this.lastPlayer == player) {
-            return "Can not move again";
-        }
-        if(isPositionEmpty(x,y)) {
-            this.board[x][y] = player;
-            this.lastPlayer = player;
-            return "Move done!";
-        }else {
-            return "Can not move there, position in use";
-        }
+        return "Game over! Nobody wins";
     }
 
     public boolean canMakeMove(){
