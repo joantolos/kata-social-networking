@@ -4,22 +4,22 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class BoardTest {
+public class TicTacToeTest {
 
-    private Board board;
+    private TicTacToe ticTacToe;
 
     @Before
     public void setUp(){
-        this.board = new Board(3,3);
+        this.ticTacToe = new TicTacToe(3,3);
     }
 
     @Test
     public void shouldCreateBoard(){
-        Assert.assertNotNull(this.board);
+        Assert.assertNotNull(this.ticTacToe);
     }
 
     @Test
     public void shouldMarksAsNotEmpty(){
-        Assert.assertTrue(this.board.isEmpty(1,1));
+        Assert.assertTrue(this.ticTacToe.isPositionEmpty(1,1));
     }
 }
