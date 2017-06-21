@@ -31,10 +31,12 @@ public class TicTacToe {
 
     public boolean canMakeMove(){
         for (int x=0; x<this.board.length; x++){
-            for (int y=0; y<this.board.length; y++) {
-
+            for (int y=0; y<this.board[x].length; y++) {
+                if(isPositionEmpty(x,y)){
+                    return true;
+                }
             }
         }
-        return true;
+        return false;
     }
 }
