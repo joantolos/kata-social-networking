@@ -42,7 +42,20 @@ public class TicTacToeTest {
 
     @Test
     public void canNotMoveForFullBoard(){
+        this.fullBoard();
         Assert.assertEquals("Game over! Nobody wins", this.ticTacToe.play(3, 1, 1));
+    }
+
+    private void fullBoard() {
+        this.ticTacToe.play(1, 0, 0);
+        this.ticTacToe.play(2, 0, 1);
+        this.ticTacToe.play(1, 0, 2);
+        this.ticTacToe.play(2, 1, 0);
+        this.ticTacToe.play(1, 1, 1);
+        this.ticTacToe.play(2, 1, 2);
+        this.ticTacToe.play(1, 2, 0);
+        this.ticTacToe.play(2, 2, 1);
+        this.ticTacToe.play(1, 2, 2);
     }
 
 }
