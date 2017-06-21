@@ -1,8 +1,5 @@
 package com.workshop.tdd;
 
-/**
- * Created by joan on 21/06/2017.
- */
 public class TicTacToe {
 
     private Integer[][] board;
@@ -30,5 +27,14 @@ public class TicTacToe {
         }else {
             return "Can not move there, position in use";
         }
+    }
+
+    public boolean canMakeMove(){
+        for (int x=0; x<this.board.length; x++){
+            for (int y=0; y<this.board.length; y++) {
+
+            }
+        }
+        return true;
     }
 }
