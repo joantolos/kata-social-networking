@@ -3,7 +3,7 @@ package com.workshop.tdd;
 public class TicTacToe {
 
     private Integer[][] board;
-    private int lastPlayer;
+    private Player lastPlayer;
 
     public TicTacToe(int x, int y){
         this.board = new Integer[x][y];
@@ -15,17 +15,17 @@ public class TicTacToe {
 
     public String play(Player player, int x, int y){
         if(canMakeMove()){
-            return performMove(player.getId(), x, y);
+            return performMove(player, x, y);
         }
         return "Game over! Nobody wins";
     }
 
-    private String performMove(int player, int x, int y) {
+    private String performMove(Player player, int x, int y) {
         if(this.lastPlayer == player) {
             return "Can not move again";
         }
         if(isPositionEmpty(x,y)) {
-            this.board[x][y] = player;
+            this.board[x][y] = player.getId();
             this.lastPlayer = player;
             return "Move done!";
         }
