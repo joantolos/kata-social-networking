@@ -20,6 +20,6 @@ public class BoardTest {
 
     @Test
     public void shouldMarksAsNotEmpty(){
-        Assert.assertFalse(this.board.isEmpty(1,1));
+        Assert.assertTrue(this.board.isEmpty(1,1));
     }
 }

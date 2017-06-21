@@ -12,6 +12,6 @@ public class Board {
     }
 
     public boolean isEmpty(int x, int y){
-        return false;
+        return this.board[x][y]==null;
     }
 }
