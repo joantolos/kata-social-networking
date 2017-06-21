@@ -19,7 +19,12 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void shouldMarksAsNotEmpty(){
+    public void shouldMarksAsEmpty(){
         Assert.assertTrue(this.ticTacToe.isPositionEmpty(1,1));
+    }
+    
+    @Test
+    public void shouldPlay(){
+        Assert.assertTrue(this.ticTacToe.play(1,1,1));
     }
 }

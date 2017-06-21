@@ -14,4 +14,8 @@ public class TicTacToe {
     public boolean isPositionEmpty(int x, int y){
         return this.board[x][y]==null;
     }
+
+    public boolean play(int uer, int x, int y){
+        return true;
+    }
 }
