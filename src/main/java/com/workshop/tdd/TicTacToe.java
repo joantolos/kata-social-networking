@@ -6,6 +6,7 @@ package com.workshop.tdd;
 public class TicTacToe {
 
     private Integer[][] board;
+    private int lastPlayer;
 
     public TicTacToe(int x, int y){
         this.board = new Integer[x][y];
@@ -16,6 +17,7 @@ public class TicTacToe {
     }
 
     public String play(int user, int x, int y){
+        this.lastPlayer = user;
         if(isPositionEmpty(x,y)) {
             this.board[x][y] = user;
             return "Move done!";
