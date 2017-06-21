@@ -17,12 +17,12 @@ public class TicTacToe {
     }
 
     public String play(int player, int x, int y){
-        if(this.lastPlayer == player){
+        if(this.lastPlayer == player)
             return "Can not move again";
-        }
-        this.lastPlayer = player;
+
         if(isPositionEmpty(x,y)) {
             this.board[x][y] = player;
+            this.lastPlayer = player;
             return "Move done!";
         }else {
             return "Can not move there, position in use";
