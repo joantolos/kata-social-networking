@@ -40,4 +40,9 @@ public class TicTacToeTest {
         Assert.assertEquals("Can not move again", this.ticTacToe.play(1, 1, 1));
     }
 
+    @Test
+    public void canNotMoveForFullBoard(){
+        Assert.assertEquals("Game over! Nobody wins", this.ticTacToe.play(3, 1, 1));
+    }
+
 }
