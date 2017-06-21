@@ -41,9 +41,14 @@ public class TicTacToe {
 
     private boolean isPositionAvailableOnRow(int x) {
         for (int y=0; y<this.board[x].length; y++) {
-            if(isPositionEmpty(x,y)){
-                return true;
-            }
+            if (checkIfPositionIsEmpty(x, y)) return true;
+        }
+        return false;
+    }
+
+    private boolean checkIfPositionIsEmpty(int x, int y) {
+        if(isPositionEmpty(x,y)){
+            return true;
         }
         return false;
     }
