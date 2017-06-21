@@ -16,10 +16,13 @@ public class TicTacToe {
         return this.board[x][y]==null;
     }
 
-    public String play(int user, int x, int y){
-        this.lastPlayer = user;
+    public String play(int player, int x, int y){
+        if(this.lastPlayer == player){
+            return "Can not move again";
+        }
+        this.lastPlayer = player;
         if(isPositionEmpty(x,y)) {
-            this.board[x][y] = user;
+            this.board[x][y] = player;
             return "Move done!";
         }else {
             return "Can not move there, position in use";
