@@ -14,17 +14,17 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void shouldCreateBoard(){
+    public void shouldStartGame(){
         Assert.assertNotNull(this.ticTacToe);
     }
 
     @Test
-    public void shouldMarksAsEmpty(){
+    public void shouldMarkAsEmpty(){
         Assert.assertTrue(this.ticTacToe.isPositionEmpty(1,1));
     }
 
     @Test
     public void shouldPlay(){
-        Assert.assertTrue(this.ticTacToe.play(1,1,1));
+        Assert.assertEquals("Move done!", this.ticTacToe.play(1,1,1));
     }
 }
