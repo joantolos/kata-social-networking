@@ -22,7 +22,7 @@ public class TicTacToeTest {
     public void shouldMarksAsEmpty(){
         Assert.assertTrue(this.ticTacToe.isPositionEmpty(1,1));
     }
-    
+
     @Test
     public void shouldPlay(){
         Assert.assertTrue(this.ticTacToe.play(1,1,1));

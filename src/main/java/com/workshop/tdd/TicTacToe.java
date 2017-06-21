@@ -15,7 +15,8 @@ public class TicTacToe {
         return this.board[x][y]==null;
     }
 
-    public boolean play(int uer, int x, int y){
+    public boolean play(int user, int x, int y){
+        this.board[x][y] = user;
         return true;
     }
 }
