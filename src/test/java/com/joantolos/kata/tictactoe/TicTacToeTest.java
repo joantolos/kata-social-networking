@@ -1,5 +1,7 @@
-package com.workshop.tdd;
+package com.joantolos.kata.tictactoe;
 
+import com.joantolos.kata.tictactoe.Player;
+import com.joantolos.kata.tictactoe.TicTacToe;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

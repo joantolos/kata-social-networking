@@ -1,4 +1,4 @@
-package com.workshop.tdd;
+package com.joantolos.kata.tictactoe;
 
 /**
  * Created by joan on 21/06/2017.

@@ -2,8 +2,8 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.jbcnconf.workshop.tdd</groupId>
-  <artifactId>tdd-baby-steps</artifactId>
+  <groupId>com.joantolos.kata.tictactoe</groupId>
+  <artifactId>kata-tic-tac-toe</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
 

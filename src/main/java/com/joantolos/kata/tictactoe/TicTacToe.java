@@ -1,4 +1,4 @@
-package com.workshop.tdd;
+package com.joantolos.kata.tictactoe;
 
 public class TicTacToe {
 
