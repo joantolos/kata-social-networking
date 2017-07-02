@@ -1,6 +1,5 @@
 package com.joantolos.kata.tictactoe;
 
-import com.joantolos.kata.tictactoe.exception.NotEnoughPlayersException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -21,37 +20,21 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void shouldAddPlayerTest(){
-        Assert.assertTrue(ticTacToe.addPlayer("Joan"));
-        Assert.assertEquals("Joan", ticTacToe.getPlayers().get(0).getName());
+    public void shouldStartNewGame() {
+        Assert.assertNotNull(ticTacToe.startNewGame());
     }
 
     @Test
-    public void shouldNotBeEnoughPlayers(){
-        Assert.assertFalse(ticTacToe.correctNumberOfPlayers());
+    public void shouldAddPlayer() {
+        String gameId = ticTacToe.startNewGame();
+        Assert.assertTrue(ticTacToe.addPlayer(gameId, "Joan"));
     }
 
     @Test
-    public void shouldBeEnoughPlayers(){
-        TicTacToe ticTacToePlayer = new TicTacToe();
-        ticTacToePlayer.addPlayer("Joan");
-        ticTacToePlayer.addPlayer("Nuria");
-        Assert.assertTrue(ticTacToePlayer.correctNumberOfPlayers());
-    }
-
-    @Test(expected = NotEnoughPlayersException.class)
-    public void gameShouldNotStartWithNotEnoughPlayers() throws NotEnoughPlayersException {
-        ticTacToe.start();
-    }
-
-    @Test
-    public void gameShouldStartWithTwoPlayers() {
-        ticTacToe.addPlayer("Joan");
-        ticTacToe.addPlayer("Nuria");
-        try {
-            Assert.assertNotNull(ticTacToe.start());
-        } catch (NotEnoughPlayersException e) {
-            Assert.fail();
-        }
+    public void shouldFindGameById(){
+        String gameId = ticTacToe.startNewGame();
+        Game foundedGame = ticTacToe.findGameById(gameId);
+        Assert.assertNotNull(foundedGame);
+        Assert.assertEquals(gameId, foundedGame.getId());
     }
 }
