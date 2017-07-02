@@ -1,4 +1,4 @@
-package com.joantolos.kata.tictactoe;
+package com.joantolos.kata.tictactoe.exception;
 
 public class NotEnoughPlayersException extends Throwable {
 }

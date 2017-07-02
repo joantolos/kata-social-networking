@@ -1,5 +1,6 @@
 package com.joantolos.kata.tictactoe;
 
+import com.joantolos.kata.tictactoe.exception.NotEnoughPlayersException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -41,5 +42,16 @@ public class TicTacToeTest {
     @Test(expected = NotEnoughPlayersException.class)
     public void gameShouldNotStartWithNotEnoughPlayers() throws NotEnoughPlayersException {
         ticTacToe.start();
+    }
+
+    @Test
+    public void gameShouldStartWithTwoPlayers() {
+        ticTacToe.addPlayer("Joan");
+        ticTacToe.addPlayer("Nuria");
+        try {
+            ticTacToe.start();
+        } catch (NotEnoughPlayersException e) {
+            Assert.fail();
+        }
     }
 }

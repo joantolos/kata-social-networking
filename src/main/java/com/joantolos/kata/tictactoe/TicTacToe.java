@@ -1,5 +1,7 @@
 package com.joantolos.kata.tictactoe;
 
+import com.joantolos.kata.tictactoe.exception.NotEnoughPlayersException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class TicTacToe {
         players = new ArrayList<Player>();
     }
 
-    public void start() throws NotEnoughPlayersException{
+    public void start() throws NotEnoughPlayersException {
         if(!correctNumberOfPlayers()){
             throw new NotEnoughPlayersException();
         }
