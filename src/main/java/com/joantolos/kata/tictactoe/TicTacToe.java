@@ -4,23 +4,24 @@ import com.joantolos.kata.tictactoe.exception.NotEnoughPlayersException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class TicTacToe {
 
     public static final int NUMBER_OF_PLAYERS = 2;
     private Board board;
     private List<Player> players;
-    private int numberOfPlayers;
+    private Game game;
 
-    public TicTacToe(){
-        board = new Board();
-        players = new ArrayList<Player>();
-    }
-
-    public void start() throws NotEnoughPlayersException {
+    public String start() throws NotEnoughPlayersException {
         if(!correctNumberOfPlayers()){
             throw new NotEnoughPlayersException();
         }
+        board = new Board();
+        players = new ArrayList<Player>();
+        String gameId = UUID.randomUUID().toString();
+        game = new Game(gameId);
+        return gameId;
     }
 
     public boolean addPlayer(String name) {

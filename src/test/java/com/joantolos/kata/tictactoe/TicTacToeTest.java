@@ -49,7 +49,7 @@ public class TicTacToeTest {
         ticTacToe.addPlayer("Joan");
         ticTacToe.addPlayer("Nuria");
         try {
-            ticTacToe.start();
+            Assert.assertNotNull(ticTacToe.start());
         } catch (NotEnoughPlayersException e) {
             Assert.fail();
         }
