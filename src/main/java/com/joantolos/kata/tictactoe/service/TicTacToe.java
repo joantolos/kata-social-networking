@@ -1,4 +1,6 @@
-package com.joantolos.kata.tictactoe;
+package com.joantolos.kata.tictactoe.service;
+
+import com.joantolos.kata.tictactoe.game.Game;
 
 import java.util.ArrayList;
 import java.util.List;

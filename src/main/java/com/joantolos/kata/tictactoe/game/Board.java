@@ -1,4 +1,4 @@
-package com.joantolos.kata.tictactoe;
+package com.joantolos.kata.tictactoe.game;
 
 import java.util.Arrays;
 
@@ -24,9 +24,19 @@ public class Board {
         return emptyBoard;
     }
 
-    void print(){
+    public String print(){
+        StringBuilder boardForPrinting = new StringBuilder();
         for(String[] boxRow : boxes) {
-            System.out.println(Arrays.deepToString(boxRow));
+            boardForPrinting.append(Arrays.deepToString(boxRow)).append("\n");
         }
+        return boardForPrinting.toString();
+    }
+
+    public void recordMove(int x, int y, String symbol){
+        boxes[x][y] = symbol;
+    }
+
+    public String getBoxStatus(int x, int y){
+        return boxes[x][y];
     }
 }

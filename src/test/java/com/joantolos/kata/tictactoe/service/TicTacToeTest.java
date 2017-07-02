@@ -1,5 +1,7 @@
-package com.joantolos.kata.tictactoe;
+package com.joantolos.kata.tictactoe.service;
 
+import com.joantolos.kata.tictactoe.game.Game;
+import com.joantolos.kata.tictactoe.service.TicTacToe;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
