@@ -1,17 +1,14 @@
 package com.joantolos.kata.tictactoe;
 
-/**
- * Created by joan on 21/06/2017.
- */
 public class Player {
 
-    private int id;
+    private String name;
 
-    public Player(int id){
-        this.id = id;
+    public Player(String name) {
+        this.name = name;
     }
 
-    public int getId(){
-        return this.id;
+    public String getName(){
+        return name;
     }
 }

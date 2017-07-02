@@ -1,7 +1,6 @@
 package com.joantolos.kata.tictactoe;
 
-import com.joantolos.kata.tictactoe.Board;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,11 +10,16 @@ public class BoardTest {
 
     @Before
     public void setUp(){
-        this.board = new Board();
+        board = new Board();
+    }
+
+    @After
+    public void tearDown(){
+        board = null;
     }
 
     @Test
-    public void shouldExistsTestBoard(){
-        Assert.assertNotNull(this.board);
+    public void printTest(){
+        board.print();
     }
 }
