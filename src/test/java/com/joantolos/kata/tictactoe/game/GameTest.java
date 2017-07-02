@@ -43,4 +43,26 @@ public class GameTest {
             Assert.fail();
         }
     }
+
+    @Test(expected = NotEnoughPlayersException.class)
+    public void shouldFailWhenNoPlayers() throws MoveNotAvailableException, NotEnoughPlayersException {
+        game.move("Joan", 0,0);
+    }
+
+    @Test(expected = NotEnoughPlayersException.class)
+    public void shouldFailWhenOnePlayer() throws MoveNotAvailableException, NotEnoughPlayersException {
+        game.addPlayer("Joan");
+        game.move("Joan", 0,0);
+    }
+
+    @Test
+    public void shouldPassWhenEnoughPlayers() {
+        game.addPlayer("Joan");
+        game.addPlayer("Nuria");
+        try {
+            game.move("Joan", 0,0);
+        } catch (MoveNotAvailableException | NotEnoughPlayersException e) {
+            Assert.fail();
+        }
+    }
 }

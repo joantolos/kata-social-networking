@@ -39,10 +39,17 @@ public class Game {
     }
 
     public void move(String playerName, int x, int y) throws MoveNotAvailableException, NotEnoughPlayersException {
+        if(notEnoughPlayers()){
+            throw new NotEnoughPlayersException();
+        }
         board.recordMove(x, y, foundPlayerByName(playerName).getSymbol());
     }
 
-    private Player foundPlayerByName(String playerName){
-        return players.stream().findFirst().filter(player -> player.getName().equals(playerName)).orElse(null);
+    private boolean notEnoughPlayers() {
+        return players.size()!= NUMBER_OF_PLAYERS;
+    }
+
+    private Player foundPlayerByName(String playerName) throws NotEnoughPlayersException {
+        return players.stream().findFirst().filter(player -> player.getName().equals(playerName)).orElseThrow(NotEnoughPlayersException::new);
     }
 }

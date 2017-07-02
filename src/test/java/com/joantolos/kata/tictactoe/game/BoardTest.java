@@ -1,5 +1,6 @@
 package com.joantolos.kata.tictactoe.game;
 
+import com.joantolos.kata.tictactoe.exception.MoveNotAvailableException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,9 +21,15 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldRecordMove(){
+    public void shouldRecordMove() throws MoveNotAvailableException {
         board.recordMove(0,1, "X");
         Assert.assertEquals("X", board.getBoxStatus(0, 1));
+    }
+
+    @Test(expected = MoveNotAvailableException.class)
+    public void shouldFailWhenBoxIsInUse() throws MoveNotAvailableException {
+        board.recordMove(0,1, "X");
+        board.recordMove(0,1, "X");
     }
 
     @Test

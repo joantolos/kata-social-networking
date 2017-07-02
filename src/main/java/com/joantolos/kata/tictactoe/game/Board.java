@@ -1,5 +1,7 @@
 package com.joantolos.kata.tictactoe.game;
 
+import com.joantolos.kata.tictactoe.exception.MoveNotAvailableException;
+
 import java.util.Arrays;
 
 public class Board {
@@ -8,6 +10,26 @@ public class Board {
 
     public Board(){
         boxes = createEmptyBoard();
+    }
+
+    public String print(){
+        StringBuilder boardForPrinting = new StringBuilder();
+        for(String[] boxRow : boxes) {
+            boardForPrinting.append(Arrays.deepToString(boxRow)).append("\n");
+        }
+        return boardForPrinting.toString();
+    }
+
+    public void recordMove(int x, int y, String symbol) throws MoveNotAvailableException {
+        if(boxes[x][y].equals("\t \t")) {
+            boxes[x][y] = "\t" + symbol + "\t";
+        } else {
+            throw new MoveNotAvailableException();
+        }
+    }
+
+    public String getBoxStatus(int x, int y){
+        return boxes[x][y];
     }
 
     private String[][] createEmptyBoard() {
@@ -22,21 +44,5 @@ public class Board {
         emptyBoard[2][1] = "\t \t";
         emptyBoard[2][2] = "\t \t";
         return emptyBoard;
-    }
-
-    public String print(){
-        StringBuilder boardForPrinting = new StringBuilder();
-        for(String[] boxRow : boxes) {
-            boardForPrinting.append(Arrays.deepToString(boxRow)).append("\n");
-        }
-        return boardForPrinting.toString();
-    }
-
-    public void recordMove(int x, int y, String symbol){
-        boxes[x][y] = symbol;
-    }
-
-    public String getBoxStatus(int x, int y){
-        return boxes[x][y];
     }
 }
