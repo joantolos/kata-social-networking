@@ -65,4 +65,14 @@ public class GameTest {
             Assert.fail();
         }
     }
+
+    @Test
+    public void shouldPrint() throws MoveNotAvailableException, NotEnoughPlayersException {
+        game.addPlayer("Joan");
+        game.addPlayer("Nuria");
+        game.move("Joan",0,0);
+        game.move("Nuria",0,1);
+        Assert.assertNotNull(game.print());
+        System.out.println(game.print());
+    }
 }

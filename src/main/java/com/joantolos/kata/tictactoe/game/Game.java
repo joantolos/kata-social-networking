@@ -50,6 +50,13 @@ public class Game {
     }
 
     private Player foundPlayerByName(String playerName) throws NotEnoughPlayersException {
-        return players.stream().findFirst().filter(player -> player.getName().equals(playerName)).orElseThrow(NotEnoughPlayersException::new);
+        return players.stream().filter(player -> player.getName().equals(playerName)).findFirst().orElseThrow(NotEnoughPlayersException::new);
+    }
+
+    public String print() {
+        return "GAME ID: " + id + "\n" + "\n" +
+                "Player " + players.get(0).getName() + " with symbol: " + players.get(0).getSymbol() + "\n" +
+                "Player " + players.get(1).getName() + " with symbol: " + players.get(1).getSymbol() + "\n" + "\n" +
+                board.print();
     }
 }
