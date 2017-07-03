@@ -23,7 +23,7 @@ public class BoardTest {
     @Test
     public void shouldRecordMove() throws MoveNotAvailableException {
         board.recordMove(0,1, "X");
-        Assert.assertEquals("X", board.getBoxStatus(0, 1));
+        Assert.assertEquals("\tX\t", board.getBoxStatus(0, 1));
     }
 
     @Test(expected = MoveNotAvailableException.class)

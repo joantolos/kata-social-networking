@@ -1,6 +1,5 @@
 package com.joantolos.kata.tictactoe.service;
 
-import com.joantolos.kata.tictactoe.exception.NotEnoughPlayersException;
 import com.joantolos.kata.tictactoe.game.Game;
 import org.junit.After;
 import org.junit.Assert;
