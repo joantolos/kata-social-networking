@@ -79,6 +79,9 @@ begin
     end;
 
   if found is false then output "Failure";
-  else trace the pointers in the PRED fields from X back to S, "CONSing" each node onto the growing list of nodes to get the path from S to X;
+  else 
+    trace the pointers in the PRED fields from X back to S, 
+    "CONSing" each node onto the growing list of nodes to get the path 
+    from S to X;
 end;
 ```
