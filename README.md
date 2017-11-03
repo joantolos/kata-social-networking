@@ -29,3 +29,20 @@ The 9 rules listed below:
 1. Keep All Entities Small
 1. No Classes With More Than Two Instance Variables
 1. No Getters/Setters/Properties
+
+```javascript
+(defun heuristica (estat)
+  (cond
+    ((equal estat "A") 80)
+    ((equal estat "B") 90)
+    ((equal estat "C") 60)
+    ((equal estat "D") 65)
+    ((equal estat "E") 70)
+    ((equal estat "F") 50)
+    ((equal estat "G") 50)
+    ((equal estat "H") 50)
+    ((equal estat "Z") 0)
+    (t  10)
+  )
+)
+```
