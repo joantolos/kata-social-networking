@@ -31,18 +31,46 @@ The 9 rules listed below:
 1. No Getters/Setters/Properties
 
 ```javascript
-(defun heuristica (estat)
+(defun cost (estat1 estat2)
+  ;;;;;;;;; Casos estat1 -> estat2
   (cond
-    ((equal estat "A") 80)
-    ((equal estat "B") 90)
-    ((equal estat "C") 60)
-    ((equal estat "D") 65)
-    ((equal estat "E") 70)
-    ((equal estat "F") 50)
-    ((equal estat "G") 50)
-    ((equal estat "H") 50)
-    ((equal estat "Z") 0)
-    (t  10)
+    ((equal estat1 "A") (cond
+      ((equal estat2 "B") 4)
+      ((equal estat2 "C") 10)
+      ((equal estat2 "D") 10)
+      ((equal estat2 "E") 15)
+      (t  0)
+    ))
+    ((equal estat1 "B") (cond
+      ((equal estat2 "F") 5)
+      (t  0)
+    ))
+    ((equal estat1 "C") (cond
+      ((equal estat2 "F") 20)
+      (t  0)
+    ))
+    ((equal estat1 "D") (cond
+      ((equal estat2 "F") 10)
+      (t  0)
+    ))
+    ((equal estat1 "E") (cond
+      ((equal estat2 "F") 3)
+      (t  0)
+    ))
+    ((equal estat1 "E") (cond
+      ((equal estat2 "H") 30)
+      (t  0)
+    ))
+    ((equal estat1 "F") (cond
+      ((equal estat2 "G") 35)
+      ((equal estat2 "H") 30)
+      (t  0)
+    ))
+    ((equal estat1 "H") (cond
+      ((equal estat2 "Z") 2)
+      (t  0)
+    ))
+    (t  0)
   )
 )
 ```
