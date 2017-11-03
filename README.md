@@ -32,7 +32,6 @@ The 9 rules listed below:
 
 ```javascript
 (defun cost (estat1 estat2)
-  ;;;;;;;;; Casos estat1 -> estat2
   (cond
     ((equal estat1 "A") (cond
       ((equal estat2 "B") 4)
