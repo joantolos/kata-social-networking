@@ -31,50 +31,54 @@ The 9 rules listed below:
 1. No Getters/Setters/Properties
 
 ```javascript
-(defun cost (estat1 estat2)
-  (cond
-    ((equal estat1 "A") (cond
-      ((equal estat2 "C") 20)
-      ((equal estat2 "D") 1)
-      ((equal estat2 "B") 20)
-      (t  0)
-    ))
-    ((equal estat1 "B") (cond
-      ((equal estat2 "D") 4)
-      ((equal estat2 "G") 4)
-      (t  0)
-    ))
-    ((equal estat1 "C") (cond
-      ((equal estat2 "B") 3)
-      ((equal estat2 "E") 3)
-      (t  0)
-    ))
-    ((equal estat1 "D") (cond
-      ((equal estat2 "E") 5)
-      (t  0)
-    ))
-    ((equal estat1 "E") (cond
-      ((equal estat2 "H") 2)
-      ((equal estat2 "F") 9)
-      (t  0)
-    ))
-    ((equal estat1 "H") (cond
-      ((equal estat2 "I") 1)
-      (t  0)
-    ))
-    ((equal estat1 "F") (cond
-      ((equal estat2 "G") 10)
-      (t  0)
-    ))
-    ((equal estat1 "G") (cond
-      ((equal estat2 "H") 4)
-      (t  0)
-    ))
-    ((equal estat1 "I") (cond
-      ((equal estat2 "C") 7)
-      (t  0)
-    ))
-    (t  0)
-  )
-)
+(defun AtoB (estat info)
+  (if (equal estat 'A) 'B 'buit))
+(defun AtoC (estat info)
+  (if (equal estat 'A) 'C 'buit))
+(defun AtoD (estat info)
+  (if (equal estat 'A) 'D 'buit))
+
+(defun BtoD (estat info)
+  (if (equal estat 'B) 'D 'buit))
+(defun BtoG (estat info)
+  (if (equal estat 'B) 'G 'buit))
+
+(defun CtoE (estat info)
+  (if (equal estat 'C) 'E 'buit))
+(defun CtoB (estat info)
+  (if (equal estat 'C) 'B 'buit))
+
+(defun DtoE (estat info)
+  (if (equal estat 'D) 'E 'buit))
+
+(defun EtoF (estat info)
+  (if (equal estat 'E) 'F 'buit))
+(defun EtoH (estat info)
+  (if (equal estat 'E) 'H 'buit))
+
+(defun FtoG (estat info)
+  (if (equal estat 'F) 'G 'buit))
+
+(defun GtoH (estat info)
+  (if (equal estat 'G) 'H 'buit))
+
+(defun HtoI (estat info)
+  (if (equal estat 'H) 'I 'buit))
+
+(defun ItoC (estat info)
+  (if (equal estat 'I) 'C 'buit))
+
+(defvar tl-operadors
+  (list (list 'AtoB #'AtoB)
+        (list 'AtoC #'AtoC)
+        (list 'AtoD #'AtoD)
+        (list 'AtoE #'AtoE)
+        (list 'BtoF #'BtoF)
+        (list 'CtoF #'CtoF)
+        (list 'DtoF #'DtoF)
+        (list 'EtoF #'EtoF)
+        (list 'EtoH #'EtoH)
+        (list 'FtoG #'FtoG)
+        (list 'FtoH #'FtoH)
+        (list 'HtoI #'Htoi)))
 ```
