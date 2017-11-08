@@ -31,54 +31,15 @@ The 9 rules listed below:
 1. No Getters/Setters/Properties
 
 ```javascript
-(defun AtoB (estat info)
-  (if (equal estat 'A) 'B 'buit))
-(defun AtoC (estat info)
-  (if (equal estat 'A) 'C 'buit))
-(defun AtoD (estat info)
-  (if (equal estat 'A) 'D 'buit))
-
-(defun BtoD (estat info)
-  (if (equal estat 'B) 'D 'buit))
-(defun BtoG (estat info)
-  (if (equal estat 'B) 'G 'buit))
-
-(defun CtoE (estat info)
-  (if (equal estat 'C) 'E 'buit))
-(defun CtoB (estat info)
-  (if (equal estat 'C) 'B 'buit))
-
-(defun DtoE (estat info)
-  (if (equal estat 'D) 'E 'buit))
-
-(defun EtoF (estat info)
-  (if (equal estat 'E) 'F 'buit))
-(defun EtoH (estat info)
-  (if (equal estat 'E) 'H 'buit))
-
-(defun FtoG (estat info)
-  (if (equal estat 'F) 'G 'buit))
-
-(defun GtoH (estat info)
-  (if (equal estat 'G) 'H 'buit))
-
-(defun HtoI (estat info)
-  (if (equal estat 'H) 'I 'buit))
-
-(defun ItoC (estat info)
-  (if (equal estat 'I) 'C 'buit))
-
-(defvar tl-operadors
-  (list (list 'AtoB #'AtoB)
-        (list 'AtoC #'AtoC)
-        (list 'AtoD #'AtoD)
-        (list 'AtoE #'AtoE)
-        (list 'BtoF #'BtoF)
-        (list 'CtoF #'CtoF)
-        (list 'DtoF #'DtoF)
-        (list 'EtoF #'EtoF)
-        (list 'EtoH #'EtoH)
-        (list 'FtoG #'FtoG)
-        (list 'FtoH #'FtoH)
-        (list 'HtoI #'Htoi)))
+(defvar problema-cercaA*
+  (list tl-operadors
+        #'(lambda (info-node-pare estat nom-operador) ;;; *** info-node-pare = (estat-pare (g g-plus-h))
+            (let ((estat-pare  (car info-node-pare))  ;;; Això també és diferent de l'original
+                  (g           (caadr info-node-pare))
+                  (g-plus-h    (cadadr info-node-pare)))
+              (list (+ g (cost estat-pare estat))
+                    (+ (+ g (cost estat-pare estat)) (heuristica estat)))))
+        'A
+        #'(lambda (estat) (equal estat 'G))
+        #'(lambda (estat) (list 0 (heuristica estat))) ))
 ```
