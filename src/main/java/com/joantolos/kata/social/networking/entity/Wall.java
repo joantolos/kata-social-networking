@@ -18,10 +18,4 @@ public class Wall {
     public void addPost(User user, String message) {
         this.posts.add(new Post(user, message));
     }
-
-    public String print() {
-        StringBuilder wall = new StringBuilder("");
-        posts.forEach(post -> wall.append(post.getUser().getName()).append(" -> ").append(post.getMessage()).append("\n"));
-        return wall.toString();
-    }
 }

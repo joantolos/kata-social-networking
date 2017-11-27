@@ -25,7 +25,7 @@ public class TwitterService {
     }
 
     public String wall(String userName) {
-        return getUser(userName).getWall().print();
+        return getUser(userName).printWall();
     }
 
     public List<User> getUsers() {

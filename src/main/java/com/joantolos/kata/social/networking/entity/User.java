@@ -23,11 +23,13 @@ public class User {
         return this.wall;
     }
 
-    public List<User> getFollowedUsers() {
-        return followedUsers;
-    }
-
     public void addUserToFollow(User user) {
         this.followedUsers.add(user);
+    }
+
+    public String printWall() {
+        StringBuilder wall = new StringBuilder("");
+        this.wall.getPosts().forEach(post -> wall.append(post.getUser().getName()).append(" -> ").append(post.getMessage()).append("\n"));
+        return wall.toString();
     }
 }
