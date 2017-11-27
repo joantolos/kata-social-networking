@@ -1,6 +1,7 @@
 package com.joantolos.kata.social.networking.entity;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class User {
@@ -29,7 +30,13 @@ public class User {
 
     public String printWall() {
         StringBuilder wall = new StringBuilder("");
-        this.wall.getPosts().forEach(post -> wall.append(post.getUser().getName()).append(" -> ").append(post.getMessage()).append("\n"));
+
+        List<Post> postsToPrint = this.wall.getPosts();
+        followedUsers.forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPostsFromUser(followedUser)));
+        postsToPrint.sort(Comparator.comparing(Post::getDate));
+
+        postsToPrint.forEach(post -> wall.append(post.getUser().getName()).append(" -> ").append(post.getMessage()).append(" ").append(post.getDate()).append("\n"));
+
         return wall.toString();
     }
 }

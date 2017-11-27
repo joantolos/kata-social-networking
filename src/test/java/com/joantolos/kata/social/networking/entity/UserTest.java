@@ -21,13 +21,14 @@ public class UserTest {
     @Test
     public void shouldPrintWall(){
         alice.getWall().addPost(new User("Joan"),"My post");
-        Assert.assertEquals("Joan -> My post\n", alice.printWall());
+        Assert.assertTrue(alice.printWall().contains("Joan -> My post"));
     }
 
     @Test
     public void shouldPrintWallWhenSeveralPosts(){
-        alice.getWall().addPost(new User("Joan"),"My post");
-        alice.getWall().addPost(new User("Joan"),"My second post!");
-        Assert.assertEquals("Joan -> My post\nJoan -> My second post!\n", alice.printWall());
+        alice.getWall().addPost(new User("Alice"),"My post");
+        alice.getWall().addPost(new User("Alice"),"My second post!");
+        Assert.assertTrue(alice.printWall().contains("Alice -> My post"));
+        Assert.assertTrue(alice.printWall().contains("Alice -> My second post!"));
     }
 }

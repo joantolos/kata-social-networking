@@ -26,12 +26,21 @@ public class TwitterServiceTest {
     @Test
     public void shouldShowWall(){
         twitterService.post("Joan", "My very first message");
-        Assert.assertEquals("Joan -> My very first message\n", twitterService.wall("Joan"));
+        Assert.assertTrue(twitterService.wall("Joan").contains("Joan -> My very first message"));
     }
 
     @Test
     public void shouldAddUser() {
         twitterService.post("Joan", "My very first message");
         Assert.assertNotNull(twitterService.getUsers().stream().filter(user -> user.getName().equals("Joan")).findFirst().orElse(null));
+    }
+
+    @Test
+    public void shouldPrintWallWithFollowedUsers() {
+        twitterService.post("Alice", "Alice writes a message first.");
+        twitterService.post("Bob", "Bob writes a message second.");
+        twitterService.follow("Alice", "Bob");
+        Assert.assertTrue(twitterService.wall("Alice").contains("Alice -> Alice writes a message first."));
+        Assert.assertTrue(twitterService.wall("Alice").contains("Bob -> Bob writes a message second."));
     }
 }
