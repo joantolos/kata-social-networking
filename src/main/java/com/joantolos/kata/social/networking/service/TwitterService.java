@@ -27,11 +27,7 @@ public class TwitterService {
     public String wall(String userName) {
         return getUser(userName).printWall();
     }
-
-    public List<User> getUsers() {
-        return users;
-    }
-
+    
     private User getUser(String userName) {
         User foundUser = users.stream().filter(u -> u.getName().equals(userName)).findFirst().orElse(null);
         if(foundUser==null){
