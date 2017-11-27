@@ -1,45 +1,51 @@
-# kata-tic-tac-toe
+# kata-social-networking
 
-Implement the tic-tac-toe game on Console with two human players.
+This is a kata extracted from the Sandro Mancuso personal repository: https://github.com/sandromancuso/social_networking_kata
 
-# Constraints
+I found the exercise interesting and this is my implementation in Java. 
 
-The game should be implemented using TDD. To make the kata interesting, there are two constraints to take into account
+Social Networking Kata
+----------------------
 
-## Two minutes iteration
+Implement a console-based social networking application (similar to Twitter) satisfying the scenarios below.
 
-Set a clock timer to two minutes. When the alarm sounds, pass all your tests, if they don't pass, revert the changes to the last commit:
+### Scenarios
 
-    git reset --hard
+**Posting**: Alice can publish messages to a personal timeline
 
-## Object Calisthenics
+> \> Alice -> I love the weather today    
+> \> Bob -> Damn! We lost!     
+> \> Bob -> Good game though.    
 
-Object Calisthenics are programming exercises, formalized as a set of 9 rules invented by Jeff Bay in his book The ThoughtWorks Anthology. The word Object is related to Object Oriented Programming. The word Calisthenics is derived from greek, and means exercises under the context of gymnastics. By trying to follow these rules as much as possible, you will naturally change how you write code. It doesn’t mean you have to follow all these rules, all the time. Find your balance with these rules, use some of them only if you feel comfortable with them.
+**Reading**: Bob can view Alice’s timeline
 
-These rules focus on maintainability, readability, testability, and comprehensibility of your code. If you already write code that is maintainable, readable, testable, and comprehensible, then these rules will help you write code that is more maintainable, more readable, more testable, and more comprehensible.
+> \> Alice    
+> \> I love the weather today (5 minutes ago)    
+> \> Bob    
+> \> Good game though. (1 minute ago)     
+> \> Damn! We lost! (2 minutes ago)    
 
-The 9 rules listed below:
+**Following**: Charlie can subscribe to Alice’s and Bob’s timelines, and view an aggregated list of all subscriptions
 
-1. Only One Level Of Indentation Per Method
-1. Don’t Use The ELSE Keyword
-1. Wrap All Primitives And Strings
-1. First Class Collections
-1. One Dot Per Line
-1. Don’t Abbreviate
-1. Keep All Entities Small
-1. No Classes With More Than Two Instance Variables
-1. No Getters/Setters/Properties
+> \> Charlie -> I'm in New York today! Anyone wants to have a coffee?     
+> \> Charlie follows Alice    
+> \> Charlie wall    
+> \> Charlie - I'm in New York today! Anyone wants to have a coffee? (2 seconds ago)    
+> \> Alice - I love the weather today (5 minutes ago)    
 
-```javascript
-(defvar problema-cercaA*
-  (list tl-operadors
-        #'(lambda (info-node-pare estat nom-operador) ;;; *** info-node-pare = (estat-pare (g g-plus-h))
-            (let ((estat-pare  (car info-node-pare))  ;;; Això també és diferent de l'original
-                  (g           (caadr info-node-pare))
-                  (g-plus-h    (cadadr info-node-pare)))
-              (list (+ g (cost estat-pare estat))
-                    (+ (+ g (cost estat-pare estat)) (heuristica estat)))))
-        'A
-        #'(lambda (estat) (equal estat 'G))
-        #'(lambda (estat) (list 0 (heuristica estat))) ))
-```
+> \> Charlie follows Bob    
+> \> Charlie wall    
+> \> Charlie - I'm in New York today! Anyone wants to have a coffee? (15 seconds ago)     
+> \> Bob - Good game though. (1 minute ago)     
+> \> Bob - Damn! We lost! (2 minutes ago)     
+> \> Alice - I love the weather today (5 minutes ago)    
+
+### General requirements 
+
+- Application must use the console for input and output; 
+- User submits commands to the application: 
+    - posting: \<user name> -> \<message> 
+    - reading: \<user name> 
+    - following: \<user name> follows \<another user> 
+    - wall: \<user name> wall 
+- **NOTE:** "posting:", "reading:", "following:" and "wall:" are not part of the command. All commands start with the user name.
