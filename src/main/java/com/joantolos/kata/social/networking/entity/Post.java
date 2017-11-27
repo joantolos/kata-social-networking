@@ -22,10 +22,6 @@ public class Post {
         return user;
     }
 
-    public Timestamp getDate() {
-        return date;
-    }
-
     public String getTimeLapse() {
         Long millisecondsIncrement = this.date.getTime() - new Timestamp(System.currentTimeMillis()).getTime();
         Long secondsIncrement = (millisecondsIncrement / 1000) * -1;
