@@ -29,13 +29,18 @@ public class User {
     }
 
     public String printWall() {
-        StringBuilder wall = new StringBuilder("");
-
         List<Post> postsToPrint = this.wall.getPosts();
         followedUsers.forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPostsFromUser(followedUser)));
-        postsToPrint.sort(Comparator.comparing(Post::getDate));
 
-        postsToPrint.forEach(post -> wall.append(post.getUser().getName()).append(" -> ").append(post.getMessage()).append(" ").append(post.getDate()).append("\n"));
+        StringBuilder wall = new StringBuilder("");
+        postsToPrint.forEach(post -> wall
+                .append(post.getUser().getName())
+                .append(" -> ")
+                .append(post.getMessage())
+                .append(" (")
+                .append(post.getTimeLapse())
+                .append(")")
+                .append("\n"));
 
         return wall.toString();
     }

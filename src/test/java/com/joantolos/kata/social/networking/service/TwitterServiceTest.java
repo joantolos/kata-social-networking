@@ -30,17 +30,31 @@ public class TwitterServiceTest {
     }
 
     @Test
-    public void shouldAddUser() {
-        twitterService.post("Joan", "My very first message");
-        Assert.assertNotNull(twitterService.getUsers().stream().filter(user -> user.getName().equals("Joan")).findFirst().orElse(null));
-    }
-
-    @Test
     public void shouldPrintWallWithFollowedUsers() {
         twitterService.post("Alice", "Alice writes a message first.");
         twitterService.post("Bob", "Bob writes a message second.");
         twitterService.follow("Alice", "Bob");
         Assert.assertTrue(twitterService.wall("Alice").contains("Alice -> Alice writes a message first."));
         Assert.assertTrue(twitterService.wall("Alice").contains("Bob -> Bob writes a message second."));
+    }
+
+    @Test
+    public void shouldPrintIncrementedTimeLapse() {
+        try {
+            twitterService.post("Alice", "Alice writes a message first.");
+            Thread.sleep(10000);
+            twitterService.post("Bob", "Bob writes a message second.");
+            Thread.sleep(5000);
+            twitterService.follow("Alice", "Bob");
+
+            String[] lines = twitterService.wall("Alice").split("\n");
+            Integer firstPostTime = Integer.valueOf(lines[0].substring(lines[0].indexOf("(") + 1, lines[0].length()).substring(0, lines[0].substring(lines[0].indexOf("(") + 1, lines[0].length()).indexOf(" ")));
+            Integer secondPostTime = Integer.valueOf(lines[1].substring(lines[1].indexOf("(") + 1, lines[1].length()).substring(0, lines[1].substring(lines[1].indexOf("(") + 1, lines[1].length()).indexOf(" ")));
+
+            Assert.assertTrue(firstPostTime > secondPostTime || secondPostTime > firstPostTime);
+
+        } catch (InterruptedException e) {
+            Assert.fail();
+        }
     }
 }
