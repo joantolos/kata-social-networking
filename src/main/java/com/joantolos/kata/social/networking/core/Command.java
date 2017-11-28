@@ -17,13 +17,11 @@ public class Command {
         String[] lines = line.split(" ");
         switch (Commands.byName(lines[1])) {
             case POST:
-                System.out.println(twitterService.post(lines[0], getMessage(lines)));
-                return true;
+                return twitterService.post(lines[0], getMessage(lines));
             case WALL:
                 return twitterService.wall(lines[0]);
             case FOLLOW:
-                System.out.println(twitterService.follow(lines[0], lines[2]));
-                return true;
+                return twitterService.follow(lines[0], lines[2]);
             case EXIT:
                 ui.print(ui.exit());
                 return false;

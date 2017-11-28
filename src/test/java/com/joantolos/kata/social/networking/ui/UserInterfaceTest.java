@@ -33,14 +33,14 @@ public class UserInterfaceTest {
     public void shouldPrintHoursTimeLapse(){
         TimeLapse hoursLapse = new TimeLapse(0L, 1L, 0L, 0L);
         String hoursPrint = this.ui.timeLapse(hoursLapse);
-        Assert.assertEquals("(1 hours ago)", hoursPrint);
+        Assert.assertEquals("(1 hour ago)", hoursPrint);
     }
 
     @Test
     public void shouldPrintDaysTimeLapse(){
         TimeLapse daysLapse = new TimeLapse(1L, 0L, 0L, 0L);
         String daysPrint = this.ui.timeLapse(daysLapse);
-        Assert.assertEquals("(1 days ago)", daysPrint);
+        Assert.assertEquals("(1 day ago)", daysPrint);
     }
 
     @Test

@@ -16,12 +16,12 @@ public class TwitterServiceTest {
 
     @Test
     public void shouldPost() {
-        Assert.assertEquals("Message posted!", twitterService.post("Alice", "I love the weather today"));
+        Assert.assertTrue(twitterService.post("Alice", "I love the weather today"));
     }
 
     @Test
     public void shouldFollow(){
-        Assert.assertEquals("Alice now follows Bob", twitterService.follow("Alice", "Bob"));
+        Assert.assertTrue(twitterService.follow("Alice", "Bob"));
     }
 
 }

@@ -5,6 +5,8 @@ import com.joantolos.kata.social.networking.core.TimeLapse;
 import com.joantolos.kata.social.networking.entity.Post;
 import com.joantolos.kata.social.networking.entity.User;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class UserInterface {
@@ -14,13 +16,16 @@ public class UserInterface {
     }
 
     public String exit() {
-        return " Bye! ";
+        return " Bye! \n";
     }
 
     public String wall(User user) {
         Clock clock = new Clock();
-        List<Post> postsToPrint = user.getWall().getPosts();
-        user.getFollowedUsers().forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPostsFromUser(followedUser)));
+        List<Post> postsToPrint = new ArrayList<>();
+        postsToPrint.addAll(user.getWall().getPosts());
+        user.getFollowedUsers().forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPosts()));
+
+        postsToPrint.sort(Comparator.comparing(Post::getDate));
 
         StringBuilder wallPrint = new StringBuilder("");
         postsToPrint.forEach(post -> wallPrint
@@ -36,31 +41,39 @@ public class UserInterface {
 
     protected String timeLapse(TimeLapse lapse) {
         StringBuilder timeLapsePrint = new StringBuilder("");
-        String time = "";
+        Long time = null;
         String magnitude = "";
 
         if(lapse.getDays() > 0){
-            time = String.valueOf(lapse.getDays());
-            magnitude = "days";
+            time = (lapse.getDays());
+            magnitude = time > 1L ? "days" : "day";
         } else if(lapse.getHours() > 0){
-            time = String.valueOf(lapse.getHours());
-            magnitude = "hours";
+            time = lapse.getHours();
+            magnitude = time > 1L ? "hours" : "hour";
         } else if(lapse.getMinutes() > 0){
-            time = String.valueOf(lapse.getMinutes());
-            magnitude = "minutes";
+            time = lapse.getMinutes();
+            magnitude = time > 1L ? "minutes" : "minute";
         } else if(lapse.getSeconds() > 0){
-            time = String.valueOf(lapse.getSeconds());
-            magnitude = "seconds";
+            time = lapse.getSeconds();
+            magnitude = time > 1L ? "seconds" : "second";
         }
 
         timeLapsePrint.append("(")
-                .append(time)
+                .append(String.valueOf(time))
                 .append(" ")
                 .append(magnitude)
                 .append(" ")
                 .append("ago)");
 
         return timeLapsePrint.toString();
+    }
+
+    public String post() {
+        return " Message posted!\n";
+    }
+
+    public String follow(String userName, String userNameToFollow) {
+        return " " + userName + " now follows " + userNameToFollow + "\n";
     }
 
     public void print(String toPrint){

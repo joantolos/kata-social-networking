@@ -16,15 +16,17 @@ public class TwitterService {
         this.users = new ArrayList<>();
     }
 
-    public String post(String userName, String message) {
+    public Boolean post(String userName, String message) {
         User user = getUser(userName);
         user.getWall().addPost(user, message);
-        return "Message posted!";
+        ui.print(ui.post());
+        return true;
     }
 
-    public String follow(String userName, String userNameToFollow) {
+    public Boolean follow(String userName, String userNameToFollow) {
         getUser(userName).addUserToFollow(getUser(userNameToFollow));
-        return userName + " now follows " + userNameToFollow;
+        ui.print(ui.follow(userName, userNameToFollow));
+        return true;
     }
 
     public Boolean wall(String userName) {
