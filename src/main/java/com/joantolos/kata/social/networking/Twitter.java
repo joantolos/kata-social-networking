@@ -10,12 +10,11 @@ public class Twitter {
     public static void main (String[] args){
         UserInterface ui = new UserInterface();
         Command command = new Command(ui);
-        Scanner keyboard = new Scanner(System.in);
         Boolean exit;
 
         do {
             ui.prompt();
-            exit = command.process(keyboard.nextLine());
+            exit = command.process(new Scanner(System.in).nextLine());
         } while (!exit);
     }
 }

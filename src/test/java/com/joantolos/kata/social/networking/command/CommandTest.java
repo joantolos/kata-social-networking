@@ -28,4 +28,9 @@ public class CommandTest {
     public void shouldProcessWall(){
         Assert.assertFalse(this.command.process("Joan wall"));
     }
+
+    @Test
+    public void shouldProcessExit(){
+        Assert.assertTrue(this.command.process("Joan exit"));
+    }
 }
