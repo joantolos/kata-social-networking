@@ -1,7 +1,7 @@
 package com.joantolos.kata.social.networking.ui;
 
 import com.joantolos.kata.social.networking.core.Clock;
-import com.joantolos.kata.social.networking.core.TimeLapse;
+import com.joantolos.kata.social.networking.entity.TimeLapse;
 import com.joantolos.kata.social.networking.entity.Post;
 import com.joantolos.kata.social.networking.entity.User;
 

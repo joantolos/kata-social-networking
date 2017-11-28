@@ -1,6 +1,6 @@
 package com.joantolos.kata.social.networking.ui;
 
-import com.joantolos.kata.social.networking.core.TimeLapse;
+import com.joantolos.kata.social.networking.entity.TimeLapse;
 import com.joantolos.kata.social.networking.entity.User;
 import org.junit.Assert;
 import org.junit.Before;

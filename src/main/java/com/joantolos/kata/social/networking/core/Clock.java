@@ -1,5 +1,7 @@
 package com.joantolos.kata.social.networking.core;
 
+import com.joantolos.kata.social.networking.entity.TimeLapse;
+
 import java.sql.Timestamp;
 
 public class Clock {
@@ -12,6 +14,5 @@ public class Clock {
                 (millisecondsIncrement / (60 * 60 * 1000)) * -1,
                 (millisecondsIncrement / (60 * 1000)) * -1,
                 (millisecondsIncrement / 1000) * -1);
-
     }
 }

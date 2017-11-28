@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.core;
+package com.joantolos.kata.social.networking.entity;
 
 public class TimeLapse {
 
