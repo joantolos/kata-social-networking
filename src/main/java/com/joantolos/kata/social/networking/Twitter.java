@@ -1,6 +1,6 @@
 package com.joantolos.kata.social.networking;
 
-import com.joantolos.kata.social.networking.command.Command;
+import com.joantolos.kata.social.networking.core.Command;
 import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class Twitter {
         Boolean exit;
 
         do {
-            ui.prompt();
+            ui.print(ui.prompt());
             exit = command.process(new Scanner(System.in).nextLine());
         } while (!exit);
     }

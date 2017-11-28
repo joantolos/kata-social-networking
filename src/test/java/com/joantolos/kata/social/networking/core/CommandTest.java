@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.command;
+package com.joantolos.kata.social.networking.core;
 
 import com.joantolos.kata.social.networking.ui.UserInterface;
 import org.junit.Assert;

@@ -1,7 +1,6 @@
 package com.joantolos.kata.social.networking.entity;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class User {
@@ -38,7 +37,7 @@ public class User {
                 .append(" -> ")
                 .append(post.getMessage())
                 .append(" (")
-                .append(post.getTimeLapse())
+//                .append(post.getTimeLapse())
                 .append(")")
                 .append("\n"));
 

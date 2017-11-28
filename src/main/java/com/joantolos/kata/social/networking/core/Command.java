@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.command;
+package com.joantolos.kata.social.networking.core;
 
 import com.joantolos.kata.social.networking.service.TwitterService;
 import com.joantolos.kata.social.networking.ui.UserInterface;
@@ -26,7 +26,7 @@ public class Command {
                 System.out.println(twitterService.follow(lines[0], lines[2]));
                 return false;
             case EXIT:
-                ui.exit();
+                ui.print(ui.exit());
                 return true;
             default:
                 return true;

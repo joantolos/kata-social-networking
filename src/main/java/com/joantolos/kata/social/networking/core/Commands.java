@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.command;
+package com.joantolos.kata.social.networking.core;
 
 import java.util.Arrays;
 
