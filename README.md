@@ -4,6 +4,12 @@ This is a kata extracted from the Sandro Mancuso personal repository: https://gi
 
 I found the exercise interesting and this is my implementation in Java. 
 
+To run the build with test coverage:
+
+    mvn clean jacoco:prepare-agent install jacoco:report
+    
+You will find the coverage report on /target/site/jacoco/index.html
+
 Social Networking Kata
 ----------------------
 
