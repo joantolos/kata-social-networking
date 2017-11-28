@@ -1,6 +1,6 @@
 package com.joantolos.kata.social.networking.core;
 
-import com.joantolos.kata.social.networking.entity.TimeLapse;
+import com.joantolos.kata.social.networking.domain.TimeLapse;
 
 import java.sql.Timestamp;
 

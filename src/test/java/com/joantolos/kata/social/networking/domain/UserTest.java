@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.entity;
+package com.joantolos.kata.social.networking.domain;
 
 import org.junit.Assert;
 import org.junit.Before;

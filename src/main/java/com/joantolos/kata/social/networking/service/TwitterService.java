@@ -1,6 +1,6 @@
 package com.joantolos.kata.social.networking.service;
 
-import com.joantolos.kata.social.networking.entity.User;
+import com.joantolos.kata.social.networking.domain.User;
 import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.ArrayList;

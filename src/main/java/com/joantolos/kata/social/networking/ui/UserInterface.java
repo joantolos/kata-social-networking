@@ -1,9 +1,9 @@
 package com.joantolos.kata.social.networking.ui;
 
 import com.joantolos.kata.social.networking.core.Clock;
-import com.joantolos.kata.social.networking.entity.TimeLapse;
-import com.joantolos.kata.social.networking.entity.Post;
-import com.joantolos.kata.social.networking.entity.User;
+import com.joantolos.kata.social.networking.domain.TimeLapse;
+import com.joantolos.kata.social.networking.domain.Post;
+import com.joantolos.kata.social.networking.domain.User;
 
 import java.util.ArrayList;
 import java.util.Comparator;

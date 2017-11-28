@@ -1,7 +1,7 @@
 package com.joantolos.kata.social.networking.ui;
 
-import com.joantolos.kata.social.networking.entity.TimeLapse;
-import com.joantolos.kata.social.networking.entity.User;
+import com.joantolos.kata.social.networking.domain.TimeLapse;
+import com.joantolos.kata.social.networking.domain.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

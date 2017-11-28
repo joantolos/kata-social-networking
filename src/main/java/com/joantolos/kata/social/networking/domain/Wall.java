@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.entity;
+package com.joantolos.kata.social.networking.domain;
 
 import java.util.ArrayList;
 import java.util.List;
