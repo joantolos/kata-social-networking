@@ -50,8 +50,10 @@ Implement a console-based social networking application (similar to Twitter) sat
 
 - Application must use the console for input and output; 
 - User submits commands to the application: 
-    - posting: <user name> <message>
-    - reading: <user name>
-    - following: <user name> following <another user>
-    - wall: <user name> wall
+    - posting: \<user name> -> \<message> 
+    - reading: \<user name> 
+    - following: \<user name> follows \<another user> 
+    - wall: \<user name> wall 
+- Don't worry about handling any exceptions or invalid commands. Assume that the user will always type the correct commands. Just focus on the sunny day scenarios.
+- Use whatever language and frameworks you want. (provide instructions on how to run the application)
 - **NOTE:** "posting:", "reading:", "following:" and "wall:" are not part of the command. All commands start with the user name.
