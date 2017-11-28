@@ -18,17 +18,4 @@ public class UserTest {
         Assert.assertNotNull(this.alice.getWall());
     }
 
-    @Test
-    public void shouldPrintWall(){
-        alice.getWall().addPost(new User("Joan"),"My post");
-        Assert.assertTrue(alice.printWall().contains("Joan -> My post"));
-    }
-
-    @Test
-    public void shouldPrintWallWhenSeveralPosts(){
-        alice.getWall().addPost(new User("Alice"),"My post");
-        alice.getWall().addPost(new User("Alice"),"My second post!");
-        Assert.assertTrue(alice.printWall().contains("Alice -> My post"));
-        Assert.assertTrue(alice.printWall().contains("Alice -> My second post!"));
-    }
 }

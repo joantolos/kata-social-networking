@@ -1,6 +1,7 @@
 package com.joantolos.kata.social.networking.service;
 
 import com.joantolos.kata.social.networking.entity.User;
+import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +9,10 @@ import java.util.List;
 public class TwitterService {
 
     private List<User> users;
+    private UserInterface ui;
 
-    public TwitterService(){
+    public TwitterService(UserInterface ui){
+        this.ui = ui;
         this.users = new ArrayList<>();
     }
 
@@ -24,8 +27,9 @@ public class TwitterService {
         return userName + " now follows " + userNameToFollow;
     }
 
-    public String wall(String userName) {
-        return getUser(userName).printWall();
+    public Boolean wall(String userName) {
+        ui.print(ui.wall(getUser(userName)));
+        return true;
     }
     
     private User getUser(String userName) {

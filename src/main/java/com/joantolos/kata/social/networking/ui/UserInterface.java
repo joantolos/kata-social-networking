@@ -1,6 +1,11 @@
 package com.joantolos.kata.social.networking.ui;
 
+import com.joantolos.kata.social.networking.core.Clock;
 import com.joantolos.kata.social.networking.core.TimeLapse;
+import com.joantolos.kata.social.networking.entity.Post;
+import com.joantolos.kata.social.networking.entity.User;
+
+import java.util.List;
 
 public class UserInterface {
 
@@ -12,7 +17,24 @@ public class UserInterface {
         return " Bye! ";
     }
 
-    public String createTimeLapse(TimeLapse lapse) {
+    public String wall(User user) {
+        Clock clock = new Clock();
+        List<Post> postsToPrint = user.getWall().getPosts();
+        user.getFollowedUsers().forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPostsFromUser(followedUser)));
+
+        StringBuilder wallPrint = new StringBuilder("");
+        postsToPrint.forEach(post -> wallPrint
+                .append(post.getUser().getName())
+                .append(" -> ")
+                .append(post.getMessage())
+                .append(" ")
+                .append(timeLapse(clock.getTimeLapse(post.getDate())))
+                .append("\n"));
+
+        return wallPrint.toString();
+    }
+
+    protected String timeLapse(TimeLapse lapse) {
         StringBuilder timeLapsePrint = new StringBuilder("");
         String time = "";
         String magnitude = "";

@@ -16,21 +16,21 @@ public class CommandTest {
 
     @Test
     public void shouldProcessPost(){
-        Assert.assertFalse(this.command.process("Joan posting Hello"));
+        Assert.assertTrue(this.command.process("Joan posting Hello"));
     }
 
     @Test
     public void shouldProcessFollow(){
-        Assert.assertFalse(this.command.process("Joan following Jane"));
+        Assert.assertTrue(this.command.process("Joan following Jane"));
     }
 
     @Test
     public void shouldProcessWall(){
-        Assert.assertFalse(this.command.process("Joan wall"));
+        Assert.assertTrue(this.command.process("Joan wall"));
     }
 
     @Test
     public void shouldProcessExit(){
-        Assert.assertTrue(this.command.process("Joan exit"));
+        Assert.assertFalse(this.command.process("Joan exit"));
     }
 }

@@ -23,24 +23,12 @@ public class User {
         return this.wall;
     }
 
+    public List<User> getFollowedUsers() {
+        return followedUsers;
+    }
+
     public void addUserToFollow(User user) {
         this.followedUsers.add(user);
     }
 
-    public String printWall() {
-        List<Post> postsToPrint = this.wall.getPosts();
-        followedUsers.forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPostsFromUser(followedUser)));
-
-        StringBuilder wall = new StringBuilder("");
-        postsToPrint.forEach(post -> wall
-                .append(post.getUser().getName())
-                .append(" -> ")
-                .append(post.getMessage())
-                .append(" (")
-//                .append(post.getTimeLapse())
-                .append(")")
-                .append("\n"));
-
-        return wall.toString();
-    }
 }

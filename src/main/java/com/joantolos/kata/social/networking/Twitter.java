@@ -15,6 +15,6 @@ public class Twitter {
         do {
             ui.print(ui.prompt());
             exit = command.process(new Scanner(System.in).nextLine());
-        } while (!exit);
+        } while (exit);
     }
 }

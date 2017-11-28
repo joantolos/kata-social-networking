@@ -10,7 +10,7 @@ public class Command {
 
     public Command(UserInterface ui){
         this.ui = ui;
-        this.twitterService = new TwitterService();
+        this.twitterService = new TwitterService(ui);
     }
 
     public Boolean process(String line) {
@@ -18,18 +18,17 @@ public class Command {
         switch (Commands.byName(lines[1])) {
             case POST:
                 System.out.println(twitterService.post(lines[0], getMessage(lines)));
-                return false;
+                return true;
             case WALL:
-                System.out.println(twitterService.wall(lines[0]));
-                return false;
+                return twitterService.wall(lines[0]);
             case FOLLOW:
                 System.out.println(twitterService.follow(lines[0], lines[2]));
-                return false;
+                return true;
             case EXIT:
                 ui.print(ui.exit());
-                return true;
+                return false;
             default:
-                return true;
+                return false;
         }
     }
 
