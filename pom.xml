@@ -33,7 +33,7 @@
         <version>0.7.9</version>
         <configuration>
             <excludes>
-                <exclude>**/*Twitter.*</exclude>
+                <exclude>**/*TwitterApp.*</exclude>
             </excludes>
         </configuration>
       </plugin>

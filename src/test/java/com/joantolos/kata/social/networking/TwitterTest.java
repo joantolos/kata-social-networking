@@ -36,4 +36,10 @@ public class TwitterTest {
         twitter.processCommand("Joan -> I am happy");
         Assert.assertEquals(" Hello there\n I am happy\n", twitter.processCommand("Joan"));
     }
+
+    @Test
+    public void shouldFollow(){
+        Assert.assertEquals(" Joan now follows Andy\n", twitter.processCommand("Joan follows Andy"));
+    }
+
 }

@@ -21,4 +21,8 @@ public class TwitterCommand {
         }
         return foundUser;
     }
+
+    public String getUserName() {
+        return userName;
+    }
 }

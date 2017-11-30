@@ -16,6 +16,12 @@ public class Follow extends TwitterCommand implements Command {
 
     @Override
     public String process(UserInterface ui, List<User> users) {
-        return "Not empty";
+        User user = super.getUser(users);
+        user.addUserToFollow(getUserToFollow(users, userNameToFollow));
+        return ui.follow(super.getUserName(), userNameToFollow);
+    }
+
+    private User getUserToFollow(List<User> users, String userNameToFollow) {
+        return users.stream().filter(user -> user.getName().equals(userNameToFollow)).findFirst().orElse(null);
     }
 }
