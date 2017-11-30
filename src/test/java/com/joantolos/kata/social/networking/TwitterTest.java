@@ -2,7 +2,6 @@ package com.joantolos.kata.social.networking;
 
 import com.joantolos.kata.social.networking.ui.UserInterface;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class TwitterTest {
