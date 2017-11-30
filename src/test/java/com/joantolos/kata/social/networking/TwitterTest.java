@@ -34,7 +34,19 @@ public class TwitterTest {
     public void shouldReadWhenSeveralPosts(){
         twitter.processCommand("Joan -> Hello there");
         twitter.processCommand("Joan -> I am happy");
-        Assert.assertEquals(" Hello there\n I am happy\n", twitter.processCommand("Joan"));
+        String readResult = twitter.processCommand("Joan");
+        Assert.assertTrue(readResult.split("\n")[0].contains("Hello there"));
+        Assert.assertTrue(readResult.split("\n")[1].contains("I am happy"));
+    }
+
+    @Test
+    public void shouldReadWhenSeveralUsersPosting(){
+        twitter.processCommand("Joan -> Hello there");
+        twitter.processCommand("Andy -> I am happy");
+        String joanReadResult = twitter.processCommand("Joan");
+        Assert.assertTrue(joanReadResult.split("\n")[0].contains("Hello there"));
+        String andyReadResult = twitter.processCommand("Andy");
+        Assert.assertTrue(andyReadResult.split("\n")[0].contains("I am happy"));
     }
 
     @Test
@@ -46,7 +58,21 @@ public class TwitterTest {
     public void shouldShowWall(){
         twitter.processCommand("Joan -> Hello there");
         twitter.processCommand("Joan -> I am happy");
-        Assert.assertEquals(" Joan -> Hello there\n Joan -> I am happy\n", twitter.processCommand("Joan wall"));
+        String wallResult = twitter.processCommand("Joan");
+        Assert.assertTrue(wallResult.split("\n")[0].contains("Hello there"));
+        Assert.assertTrue(wallResult.split("\n")[1].contains("I am happy"));
+    }
+
+    @Test
+    public void shouldShowWallWhenFollowedUsers(){
+        twitter.processCommand("Joan -> Hello there");
+        twitter.processCommand("Andy -> This is Andy");
+        twitter.processCommand("Joan follows Andy");
+        twitter.processCommand("Joan -> I am happy");
+        String wallResult = twitter.processCommand("Joan wall");
+        Assert.assertTrue(wallResult.split("\n")[0].contains("Hello there"));
+        Assert.assertTrue(wallResult.split("\n")[1].contains("This is Andy"));
+        Assert.assertTrue(wallResult.split("\n")[2].contains("I am happy"));
     }
 
     @Test
