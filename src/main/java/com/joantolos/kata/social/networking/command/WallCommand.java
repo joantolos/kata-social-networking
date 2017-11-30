@@ -20,6 +20,6 @@ public class WallCommand extends TwitterCommand implements Command {
         postsToPrint.addAll(user.getWall().getPosts());
         user.getFollowedUsers().forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPosts()));
 
-        return ui.wall(postsToPrint);
+        return ui.postToPrint(postsToPrint, true);
     }
 }

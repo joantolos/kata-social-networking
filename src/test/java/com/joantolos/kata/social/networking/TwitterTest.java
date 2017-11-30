@@ -9,7 +9,7 @@ public class TwitterTest {
     @Test
     public void shouldPost(){
         Twitter twitter = new Twitter(new UserInterface());
-        Assert.assertEquals(" Message posted!\n", twitter.processCommand("Joan -> Hello there"));
+        Assert.assertEquals("Message posted!\n", twitter.processCommand("Joan -> Hello there"));
     }
 
     @Test
@@ -22,7 +22,8 @@ public class TwitterTest {
     public void shouldRead(){
         Twitter twitter = new Twitter(new UserInterface());
         twitter.processCommand("Joan -> Hello there");
-        Assert.assertEquals(" Hello there \n", twitter.processCommand("Joan"));
+        String readResult = twitter.processCommand("Joan");
+        Assert.assertTrue(readResult.split("\n")[0].contains("Hello there"));
     }
 
     @Test
@@ -31,8 +32,8 @@ public class TwitterTest {
         twitter.processCommand("Joan -> Hello there");
         twitter.processCommand("Joan -> I am happy");
         String readResult = twitter.processCommand("Joan");
-        Assert.assertTrue(readResult.split("\n")[0].contains(" Hello there"));
-        Assert.assertTrue(readResult.split("\n")[1].contains(" I am happy"));
+        Assert.assertTrue(readResult.split("\n")[0].contains("I am happy"));
+        Assert.assertTrue(readResult.split("\n")[1].contains("Hello there"));
     }
 
     @Test
@@ -41,15 +42,15 @@ public class TwitterTest {
         twitter.processCommand("Joan -> Hello there");
         twitter.processCommand("Andy -> I am happy");
         String joanReadResult = twitter.processCommand("Joan");
-        Assert.assertTrue(joanReadResult.split("\n")[0].contains(" Hello there"));
+        Assert.assertTrue(joanReadResult.split("\n")[0].contains("Hello there"));
         String andyReadResult = twitter.processCommand("Andy");
-        Assert.assertTrue(andyReadResult.split("\n")[0].contains(" I am happy"));
+        Assert.assertTrue(andyReadResult.split("\n")[0].contains("I am happy"));
     }
 
     @Test
     public void shouldFollow(){
         Twitter twitter = new Twitter(new UserInterface());
-        Assert.assertEquals(" Joan now follows Andy\n", twitter.processCommand("Joan follows Andy"));
+        Assert.assertEquals("Joan now follows Andy\n", twitter.processCommand("Joan follows Andy"));
     }
 
     @Test
@@ -58,8 +59,8 @@ public class TwitterTest {
         twitter.processCommand("Joan -> Hello there");
         twitter.processCommand("Joan -> I am happy");
         String wallResult = twitter.processCommand("Joan");
-        Assert.assertTrue(wallResult.split("\n")[0].contains(" Hello there"));
-        Assert.assertTrue(wallResult.split("\n")[1].contains(" I am happy"));
+        Assert.assertTrue(wallResult.split("\n")[0].contains("I am happy"));
+        Assert.assertTrue(wallResult.split("\n")[1].contains("Hello there"));
     }
 
     @Test
@@ -74,9 +75,9 @@ public class TwitterTest {
             twitter.processCommand("Joan -> I am happy");
             Thread.sleep(500);
             String wallResult = twitter.processCommand("Joan wall");
-            Assert.assertTrue(wallResult.split("\n")[0].contains("Joan -> Hello there"));
+            Assert.assertTrue(wallResult.split("\n")[0].contains("Joan -> I am happy"));
             Assert.assertTrue(wallResult.split("\n")[1].contains("Andy -> This is Andy"));
-            Assert.assertTrue(wallResult.split("\n")[2].contains("Joan -> I am happy"));
+            Assert.assertTrue(wallResult.split("\n")[2].contains("Joan -> Hello there"));
         } catch (InterruptedException e) {
             Assert.fail();
         }

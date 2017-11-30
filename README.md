@@ -10,6 +10,8 @@ To run the build with test coverage:
     
 You will find the coverage report on /target/site/jacoco/index.html
 
+![Acceptance Criteria Accomplished](acceptanceCriteriaAccomplished.png)
+
 Social Networking Kata
 ----------------------
 

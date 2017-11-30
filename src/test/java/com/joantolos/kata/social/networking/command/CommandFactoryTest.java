@@ -26,6 +26,12 @@ public class CommandFactoryTest {
     }
 
     @Test
+    public void shouldRecognizePostCommandWithSpecialCharactersOnTheMessage(){
+        Command command = CommandFactory.build("Charlie -> I'm in New York today! Anyone wants to have a coffee?");
+        Assert.assertTrue(command instanceof PostCommand);
+    }
+
+    @Test
     public void shouldRecognizeReadCommand(){
         Command command = CommandFactory.build(readCommand);
         Assert.assertTrue(command instanceof ReadCommand);

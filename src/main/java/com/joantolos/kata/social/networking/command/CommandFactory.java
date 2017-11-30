@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CommandFactory {
 
-    private static String POST_PATTERN = "\\w+\\s+->\\s+[\\w\\s]+";
+    private static String POST_PATTERN = "\\w+\\s+->\\s+[\\w\\s\\D]+";
     private static String READ_PATTERN = "\\w+";
     private static String FOLLOW_PATTERN = "\\w+\\s+follows\\s+[\\w\\s]+";
     private static String WALL_PATTERN = "\\w+\\s+wall+";
