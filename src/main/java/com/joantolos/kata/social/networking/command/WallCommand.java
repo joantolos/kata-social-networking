@@ -5,7 +5,6 @@ import com.joantolos.kata.social.networking.domain.User;
 import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class WallCommand extends TwitterCommand implements Command {
@@ -21,16 +20,6 @@ public class WallCommand extends TwitterCommand implements Command {
         postsToPrint.addAll(user.getWall().getPosts());
         user.getFollowedUsers().forEach(followedUser -> postsToPrint.addAll(followedUser.getWall().getPosts()));
 
-        postsToPrint.sort(Comparator.comparing(Post::getDate));
-
-        StringBuilder commandResult = new StringBuilder("");
-        postsToPrint.forEach(post -> commandResult
-                .append(" ")
-                .append(post.getUser().getName())
-                .append(" -> ")
-                .append(post.getMessage())
-                .append("\n"));
-
-        return commandResult.toString();
+        return ui.wall(postsToPrint);
     }
 }

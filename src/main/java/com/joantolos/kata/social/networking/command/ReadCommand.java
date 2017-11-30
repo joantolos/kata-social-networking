@@ -15,7 +15,11 @@ public class ReadCommand extends TwitterCommand implements Command {
     public String process(UserInterface ui, List<User> users) {
         User user = super.getUser(users);
         StringBuilder commandResult = new StringBuilder("");
-        user.getWall().getPosts().forEach(post -> commandResult.append(" ").append(post.getMessage()).append("\n"));
+        user.getWall().getPosts().forEach(post -> commandResult
+                .append(" ")
+                .append(post.getMessage())
+                .append(" ")
+                .append("\n"));
         return commandResult.toString();
     }
 }

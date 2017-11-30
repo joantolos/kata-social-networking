@@ -1,10 +1,14 @@
 package com.joantolos.kata.social.networking.ui;
 
+import com.joantolos.kata.social.networking.domain.Post;
 import com.joantolos.kata.social.networking.domain.TimeLapse;
 import com.joantolos.kata.social.networking.domain.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserInterfaceTest {
 
@@ -45,14 +49,9 @@ public class UserInterfaceTest {
 
     @Test
     public void shouldPrintWall(){
-        User joan = new User("Joan");
-        joan.getWall().addPost(joan, "Hello there!");
-        User andy = new User("Andy");
-        andy.getWall().addPost(andy, "This is Andy");
-        joan.addUserToFollow(andy);
-
-        String wallPrint = this.ui.wall(joan);
-        Assert.assertTrue(wallPrint.split("\n")[0].contains("Joan -> Hello there!"));
-        Assert.assertTrue(wallPrint.split("\n")[1].contains("Andy -> This is Andy"));
+        List<Post> postToPrint = new ArrayList<>();
+        postToPrint.add(new Post(new User("Joan"), "Hello there"));
+        String wallPrint = this.ui.wall(postToPrint);
+        Assert.assertTrue(wallPrint.split("\n")[0].contains("Joan -> Hello there"));
     }
 }
