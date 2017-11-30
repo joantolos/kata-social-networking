@@ -1,20 +1,26 @@
 package com.joantolos.kata.social.networking;
 
 import com.joantolos.kata.social.networking.core.Command;
+import com.joantolos.kata.social.networking.core.CommandFactory;
+import com.joantolos.kata.social.networking.domain.User;
 import com.joantolos.kata.social.networking.ui.UserInterface;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Twitter {
 
-    public static void main (String[] args){
-        UserInterface ui = new UserInterface();
-        Command command = new Command(ui);
-        Boolean exit;
+    private List<User> users;
+    private UserInterface ui;
 
-        do {
-            ui.print(ui.prompt());
-            exit = command.process(new Scanner(System.in).nextLine());
-        } while (exit);
+    public Twitter(UserInterface ui){
+        this.ui = ui;
+        this.users = new ArrayList<>();
+    }
+
+    public Boolean processCommand(String consoleCommand) {
+        Command command = CommandFactory.build(consoleCommand);
+        return command.process(ui, users);
     }
 }
