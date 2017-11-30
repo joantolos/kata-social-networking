@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class WallTest {
+public class WallCommandTest {
 
     private Wall wall;
 

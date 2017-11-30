@@ -5,11 +5,11 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.List;
 
-public class Follow extends TwitterCommand implements Command {
+public class FollowCommand extends TwitterCommand implements Command {
 
     private String userNameToFollow;
 
-    public Follow(String userName, String userNameToFollow) {
+    public FollowCommand(String userName, String userNameToFollow) {
         super(userName);
         this.userNameToFollow = userNameToFollow;
     }

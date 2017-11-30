@@ -14,13 +14,13 @@ public class CommandFactory {
 
     public static Command build(String command) {
         if (command.matches(POST_PATTERN)) {
-            return new Post(command.split(" -> ")[0], command.split(" -> ")[1]);
+            return new PostCommand(command.split(" -> ")[0], command.split(" -> ")[1]);
         } else if (command.matches(READ_PATTERN)) {
-            return new Read(command);
+            return new ReadCommand(command);
         } else if (command.matches(FOLLOW_PATTERN)) {
-            return new Follow(command.split(" follows ")[0], command.split(" follows ")[1]);
+            return new FollowCommand(command.split(" follows ")[0], command.split(" follows ")[1]);
         } else if (command.matches(WALL_PATTERN)) {
-            return new Wall(command.split(" ")[0]);
+            return new WallCommand(command.split(" ")[0]);
         }
         return new BadCommand();
     }

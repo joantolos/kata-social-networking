@@ -22,24 +22,24 @@ public class CommandFactoryTest {
     @Test
     public void shouldRecognizePostCommand(){
         Command command = CommandFactory.build(postCommand);
-        Assert.assertTrue(command instanceof Post);
+        Assert.assertTrue(command instanceof PostCommand);
     }
 
     @Test
     public void shouldRecognizeReadCommand(){
         Command command = CommandFactory.build(readCommand);
-        Assert.assertTrue(command instanceof Read);
+        Assert.assertTrue(command instanceof ReadCommand);
     }
 
     @Test
     public void shouldRecognizeFollowCommand(){
         Command command = CommandFactory.build(followCommand);
-        Assert.assertTrue(command instanceof Follow);
+        Assert.assertTrue(command instanceof FollowCommand);
     }
 
     @Test
     public void shouldRecognizeWallPost(){
         Command command = CommandFactory.build(wallCommand);
-        Assert.assertTrue(command instanceof Wall);
+        Assert.assertTrue(command instanceof WallCommand);
     }
 }

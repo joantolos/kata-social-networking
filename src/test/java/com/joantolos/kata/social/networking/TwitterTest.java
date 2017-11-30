@@ -42,4 +42,11 @@ public class TwitterTest {
         Assert.assertEquals(" Joan now follows Andy\n", twitter.processCommand("Joan follows Andy"));
     }
 
+    @Test
+    public void shouldShowWall(){
+        twitter.processCommand("Joan -> Hello there");
+        twitter.processCommand("Joan -> I am happy");
+        Assert.assertEquals(" Joan -> Hello there\n Joan -> I am happy\n", twitter.processCommand("Joan wall"));
+    }
+
 }

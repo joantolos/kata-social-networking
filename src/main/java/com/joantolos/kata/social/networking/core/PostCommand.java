@@ -5,17 +5,19 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.List;
 
-public class Read extends TwitterCommand implements Command {
+public class PostCommand extends TwitterCommand implements Command {
 
-    public Read(String userName){
+    private String message;
+
+    public PostCommand(String userName, String message){
         super(userName);
+        this.message = message;
     }
 
     @Override
     public String process(UserInterface ui, List<User> users) {
         User user = super.getUser(users);
-        StringBuilder commandResult = new StringBuilder("");
-        user.getWall().getPosts().forEach(post -> commandResult.append(" ").append(post.getMessage()).append("\n"));
-        return commandResult.toString();
+        user.getWall().addPost(user, message);
+        return ui.post();
     }
 }
