@@ -1,6 +1,7 @@
-package com.joantolos.kata.social.networking.core;
+package com.joantolos.kata.social.networking.command;
 
 import com.joantolos.kata.social.networking.domain.TimeLapse;
+import com.joantolos.kata.social.networking.utils.Clock;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

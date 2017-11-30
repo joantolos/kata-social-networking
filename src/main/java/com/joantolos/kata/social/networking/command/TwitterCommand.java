@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.core;
+package com.joantolos.kata.social.networking.command;
 
 import com.joantolos.kata.social.networking.domain.User;
 

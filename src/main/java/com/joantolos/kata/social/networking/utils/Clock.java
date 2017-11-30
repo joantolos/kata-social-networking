@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.core;
+package com.joantolos.kata.social.networking.utils;
 
 import com.joantolos.kata.social.networking.domain.TimeLapse;
 

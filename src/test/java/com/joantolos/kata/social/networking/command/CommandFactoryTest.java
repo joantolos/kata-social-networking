@@ -1,4 +1,4 @@
-package com.joantolos.kata.social.networking.core;
+package com.joantolos.kata.social.networking.command;
 
 import org.junit.Assert;
 import org.junit.Before;
