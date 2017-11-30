@@ -12,7 +12,7 @@ public class TwitterApp {
         Boolean exit;
 
         do {
-            ui.print(ui.prompt());
+            ui.print(" kata-social-network > ");
             String consoleCommand = new Scanner(System.in).nextLine();
             String commandResult = twitter.processCommand(consoleCommand);
             exit = twitter.printCommandResult(commandResult);

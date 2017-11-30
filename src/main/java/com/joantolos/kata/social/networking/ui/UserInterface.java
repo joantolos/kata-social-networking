@@ -11,14 +11,6 @@ import java.util.List;
 
 public class UserInterface {
 
-    public String prompt() {
-        return " kata-social-network > ";
-    }
-
-    public String exit() {
-        return " Bye! \n";
-    }
-
     public String wall(User user) {
         Clock clock = new Clock();
         List<Post> postsToPrint = new ArrayList<>();
