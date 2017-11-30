@@ -49,4 +49,14 @@ public class TwitterTest {
         Assert.assertEquals(" Joan -> Hello there\n Joan -> I am happy\n", twitter.processCommand("Joan wall"));
     }
 
+    @Test
+    public void shouldPrintResult(){
+        Assert.assertTrue(twitter.printCommandResult("Joan -> Hello there"));
+    }
+
+    @Test
+    public void shouldNotPrintResult(){
+        Assert.assertFalse(twitter.printCommandResult(""));
+    }
+
 }
