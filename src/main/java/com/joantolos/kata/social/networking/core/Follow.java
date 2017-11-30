@@ -15,7 +15,7 @@ public class Follow extends TwitterCommand implements Command {
     }
 
     @Override
-    public Boolean process(UserInterface ui, List<User> users) {
-        return true;
+    public String process(UserInterface ui, List<User> users) {
+        return "Not empty";
     }
 }

@@ -27,8 +27,8 @@ public class CommandFactory {
 
     private static class BadCommand implements Command {
         @Override
-        public Boolean process(UserInterface ui, List<User> users) {
-            return false;
+        public String process(UserInterface ui, List<User> users) {
+            return "";
         }
     }
 }

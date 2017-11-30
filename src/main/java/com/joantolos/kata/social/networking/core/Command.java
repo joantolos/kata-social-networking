@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface Command {
 
-    Boolean process(UserInterface ui, List<User> users);
+    String process(UserInterface ui, List<User> users);
 }

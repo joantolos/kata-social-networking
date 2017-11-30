@@ -7,7 +7,6 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Twitter {
 
@@ -19,8 +18,16 @@ public class Twitter {
         this.users = new ArrayList<>();
     }
 
-    public Boolean processCommand(String consoleCommand) {
+    public String processCommand(String consoleCommand) {
         Command command = CommandFactory.build(consoleCommand);
         return command.process(ui, users);
+    }
+
+    public Boolean printCommandResult(String commandResult){
+        if(!commandResult.isEmpty()){
+            ui.print(commandResult);
+            return true;
+        }
+        return false;
     }
 }

@@ -15,10 +15,9 @@ public class Post extends TwitterCommand implements Command {
     }
 
     @Override
-    public Boolean process(UserInterface ui, List<User> users) {
+    public String process(UserInterface ui, List<User> users) {
         User user = super.getUser(users);
         user.getWall().addPost(user, message);
-        ui.print(ui.post());
-        return true;
+        return ui.post();
     }
 }

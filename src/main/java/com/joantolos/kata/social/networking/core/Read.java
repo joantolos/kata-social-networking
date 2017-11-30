@@ -12,7 +12,10 @@ public class Read extends TwitterCommand implements Command {
     }
 
     @Override
-    public Boolean process(UserInterface ui, List<User> users) {
-        return true;
+    public String process(UserInterface ui, List<User> users) {
+        User user = super.getUser(users);
+        StringBuilder commandResult = new StringBuilder("");
+        user.getWall().getPosts().forEach(post -> commandResult.append(" ").append(post.getMessage()).append("\n"));
+        return commandResult.toString();
     }
 }

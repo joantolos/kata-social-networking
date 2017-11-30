@@ -13,7 +13,9 @@ public class TwitterApp {
 
         do {
             ui.print(ui.prompt());
-            exit = twitter.processCommand(new Scanner(System.in).nextLine());
+            String consoleCommand = new Scanner(System.in).nextLine();
+            String commandResult = twitter.processCommand(consoleCommand);
+            exit = twitter.printCommandResult(commandResult);
         } while (exit);
     }
 }

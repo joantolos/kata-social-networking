@@ -12,7 +12,7 @@ public class Wall extends TwitterCommand implements Command {
     }
 
     @Override
-    public Boolean process(UserInterface ui, List<User> users) {
-        return true;
+    public String process(UserInterface ui, List<User> users) {
+        return "not empty";
     }
 }
