@@ -1,6 +1,6 @@
 # kata-social-networking
 
-This is a kata extracted from the Sandro Mancuso personal repository: https://github.com/sandromancuso/social_networking_kata
+This is a kata extracted from the [Sandro Mancuso](https://twitter.com/sandromancuso) personal repository: https://github.com/sandromancuso/social_networking_kata
 
 I found the exercise interesting and this is my implementation in Java. 
 
@@ -10,7 +10,20 @@ To run the build with test coverage:
     
 You will find the coverage report on /target/site/jacoco/index.html
 
+You can run the TwitterApp class on your IDE or by console:
+
+    mvn clean install
+    java -jar target/kata-social-networking-1.0.jar
+    
+You can run the following scenarios with the expected results:
+
 ![Acceptance Criteria Accomplished](acceptanceCriteriaAccomplished.png)
+
+On this post I explain the whole story of this exercise:
+
+http://www.joantolos.com/blog/kataTwitter
+
+These are the original instructions for the kata:
 
 Social Networking Kata
 ----------------------

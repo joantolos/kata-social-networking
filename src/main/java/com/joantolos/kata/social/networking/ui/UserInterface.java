@@ -63,7 +63,7 @@ public class UserInterface {
     }
 
     public Boolean exit() {
-        System.out.print("Bye!");
+        System.out.print("Bye!\n");
         return true;
     }
 }
