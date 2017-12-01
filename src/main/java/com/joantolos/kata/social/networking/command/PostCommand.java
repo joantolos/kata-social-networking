@@ -5,7 +5,7 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.List;
 
-public class PostCommand extends SocialNetworkingCommand implements Command {
+public class PostCommand extends TwitterCommand implements Command {
 
     private String message;
 

@@ -7,7 +7,7 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ReadCommand extends SocialNetworkingCommand implements Command {
+public class ReadCommand extends TwitterCommand implements Command {
 
     public ReadCommand(String userName){
         super(userName);

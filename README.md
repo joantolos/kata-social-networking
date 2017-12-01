@@ -1,6 +1,6 @@
 # kata-social-networking
 
-This is a kata extracted from the [Sandro Mancuso](https://socialNetworking.com/sandromancuso) personal repository: https://github.com/sandromancuso/social_networking_kata
+This is a kata extracted from the [Sandro Mancuso](https://twitter.com/sandromancuso) personal repository: https://github.com/sandromancuso/social_networking_kata
 
 I found the exercise interesting and this is my implementation in Java. 
 

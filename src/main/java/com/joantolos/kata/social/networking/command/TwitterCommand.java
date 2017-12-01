@@ -4,11 +4,11 @@ import com.joantolos.kata.social.networking.domain.User;
 
 import java.util.List;
 
-public class SocialNetworkingCommand {
+public class TwitterCommand {
 
     private String userName;
 
-    public SocialNetworkingCommand(String userName) {
+    public TwitterCommand(String userName) {
         this.userName = userName;
     }
 
