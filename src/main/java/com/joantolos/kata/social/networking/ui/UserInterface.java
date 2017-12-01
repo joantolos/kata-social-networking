@@ -4,7 +4,6 @@ import com.joantolos.kata.social.networking.domain.Post;
 import com.joantolos.kata.social.networking.domain.TimeLapse;
 import com.joantolos.kata.social.networking.time.Clock;
 
-import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -14,32 +13,23 @@ public class UserInterface {
     public String postToPrint(List<Post> postsToPrint, Boolean toWall) {
         postsToPrint.sort(Comparator.comparing(Post::getDate));
         Collections.reverse(postsToPrint);
-
         StringBuilder posts = new StringBuilder("");
-        postsToPrint.forEach(post -> {
-            if(toWall){
-                posts
-                        .append(post.getUser().getName())
-                        .append(" -> ")  ;
-            }
-            posts
-                    .append(post.getMessage())
-                    .append(" ")
-                    .append(timeLapse(post.getDate()))
-                    .append("\n");
-            }
-        );
-
+        postsToPrint.forEach(post -> createPost(toWall, posts, post));
         return posts.toString();
     }
 
-    private String timeLapse(Timestamp postDate) {
-        Clock clock = new Clock();
-        TimeLapse lapse = clock.getTimeLapse(postDate);
+    private void createPost(Boolean toWall, StringBuilder posts, Post post) {
+        if(toWall){
+            posts.append(post.getUser().getName()).append(" -> ");
+        }
+        posts.append(post.getMessage()).append(" ").append(timeLapseToPrint(Clock.lapse(post.getDate()))).append("\n");
+    }
+
+    private String timeLapseToPrint(TimeLapse timeLapse){
         return "(" +
-                String.valueOf(lapse.getTime()) +
+                timeLapse.getTime() +
                 " " +
-                lapse.getMagnitude() +
+                (timeLapse.getTime() > 1L ? timeLapse.getClock().getMagnitude().getPlural() : timeLapse.getClock().getMagnitude().getSingular()) +
                 " " +
                 "ago)";
     }

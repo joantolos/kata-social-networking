@@ -1,31 +1,22 @@
 package com.joantolos.kata.social.networking.domain;
 
+import com.joantolos.kata.social.networking.time.Clock;
+
 public class TimeLapse {
 
+    private Clock clock;
     private Long time;
-    private String magnitude;
 
-    public TimeLapse(Long days, Long hours, Long minutes, Long seconds) {
-        if(days > 0){
-            this.time = (days);
-            this.magnitude = this.time > 1L ? "days" : "day";
-        } else if(hours > 0){
-            this.time = hours;
-            this.magnitude = this.time > 1L ? "hours" : "hour";
-        } else if(minutes > 0){
-            this.time = minutes;
-            this.magnitude = this.time > 1L ? "minutes" : "minute";
-        } else if(seconds > 0){
-            this.time = seconds;
-            this.magnitude = this.time > 1L ? "seconds" : "second";
-        }
+    public TimeLapse(Clock clock, Long time){
+        this.clock = clock;
+        this.time = time;
+    }
+
+    public Clock getClock() {
+        return clock;
     }
 
     public Long getTime() {
         return time;
-    }
-
-    public String getMagnitude() {
-        return magnitude;
     }
 }

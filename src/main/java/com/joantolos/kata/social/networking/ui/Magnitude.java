@@ -1,0 +1,25 @@
+package com.joantolos.kata.social.networking.ui;
+
+public enum Magnitude {
+
+    DAY ("days", "day"),
+    HOUR ("days", "day"),
+    MINUTE ("days", "day"),
+    SECOND ("days", "day");
+
+    private String plural;
+    private String singular;
+
+    Magnitude(String plural, String singular){
+        this.plural = plural;
+        this.singular = singular;
+    }
+
+    public String getPlural() {
+        return plural;
+    }
+
+    public String getSingular() {
+        return singular;
+    }
+}
