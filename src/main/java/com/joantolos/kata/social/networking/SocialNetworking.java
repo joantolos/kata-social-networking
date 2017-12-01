@@ -8,12 +8,12 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Twitter {
+public class SocialNetworking {
 
     private List<User> users;
     private UserInterface ui;
 
-    public Twitter(UserInterface ui){
+    public SocialNetworking(UserInterface ui){
         this.ui = ui;
         this.users = new ArrayList<>();
     }

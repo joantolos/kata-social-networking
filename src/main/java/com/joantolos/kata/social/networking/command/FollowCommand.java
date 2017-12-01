@@ -5,7 +5,7 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.List;
 
-public class FollowCommand extends TwitterCommand implements Command {
+public class FollowCommand extends SocialNetworkingCommand implements Command {
 
     private String userNameToFollow;
 

@@ -36,7 +36,7 @@
                   <manifest>
                       <addClasspath>true</addClasspath>
                       <classpathPrefix>lib/</classpathPrefix>
-                      <mainClass>com.joantolos.kata.social.networking.TwitterApp</mainClass>
+                      <mainClass>com.joantolos.kata.social.networking.SocialNetworkingApp</mainClass>
                   </manifest>
               </archive>
           </configuration>

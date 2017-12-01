@@ -29,7 +29,9 @@ public enum Clock {
 
     public static TimeLapse lapse(Timestamp postDate){
         Long msIncrement = (postDate.getTime() - new Timestamp(System.currentTimeMillis()).getTime());
-        List<TimeLapse> timeLapses = Arrays.stream(Clock.values()).map(magnitude -> new TimeLapse(magnitude, msIncrement/magnitude.factor)).collect(Collectors.toList());
+        List<TimeLapse> timeLapses = Arrays.stream(Clock.values())
+                .map(magnitude -> new TimeLapse(magnitude, msIncrement/magnitude.factor))
+                .collect(Collectors.toList());
         return timeLapses.stream().filter(m -> m.getTime()>0).findFirst().orElse(new TimeLapse(Clock.SECOND, 0L));
     }
 }

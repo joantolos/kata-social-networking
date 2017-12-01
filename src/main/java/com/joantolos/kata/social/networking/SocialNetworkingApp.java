@@ -4,18 +4,18 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.Scanner;
 
-public class TwitterApp {
+public class SocialNetworkingApp {
 
     public static void main (String[] args){
         UserInterface ui = new UserInterface();
-        Twitter twitter = new Twitter(ui);
+        SocialNetworking socialNetworking = new SocialNetworking(ui);
         Boolean exit;
 
         do {
             ui.prompt();
             String consoleCommand = new Scanner(System.in).nextLine();
-            String commandResult = twitter.processCommand(consoleCommand);
-            exit = twitter.printCommandResult(commandResult);
+            String commandResult = socialNetworking.processCommand(consoleCommand);
+            exit = socialNetworking.printCommandResult(commandResult);
         } while (exit);
         ui.exit();
     }

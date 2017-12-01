@@ -7,7 +7,7 @@ import com.joantolos.kata.social.networking.ui.UserInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WallCommand extends TwitterCommand implements Command {
+public class WallCommand extends SocialNetworkingCommand implements Command {
 
     public WallCommand(String userName){
         super(userName);
