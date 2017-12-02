@@ -21,7 +21,7 @@ You can run the following scenarios with the expected results:
 
 On this post I explain the whole story of this exercise:
 
-http://www.joantolos.com/blog/kataTwitter
+http://www.joantolos.com/blog/kata
 
 These are the original instructions for the kata:
 
