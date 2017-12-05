@@ -1,6 +1,6 @@
 package com.joantolos.kata.social.networking;
 
-import com.joantolos.kata.social.networking.junit.ui.UserInterface;
+import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.Scanner;
 

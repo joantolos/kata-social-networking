@@ -1,7 +1,7 @@
 package com.joantolos.kata.social.networking.time;
 
-import com.joantolos.kata.social.networking.junit.domain.TimeLapse;
-import com.joantolos.kata.social.networking.junit.ui.Magnitude;
+import com.joantolos.kata.social.networking.domain.TimeLapse;
+import com.joantolos.kata.social.networking.ui.Magnitude;
 
 import java.sql.Timestamp;
 import java.util.Arrays;

@@ -1,9 +1,9 @@
 package com.joantolos.kata.social.networking;
 
-import com.joantolos.kata.social.networking.junit.command.Command;
-import com.joantolos.kata.social.networking.junit.command.CommandFactory;
-import com.joantolos.kata.social.networking.junit.domain.User;
-import com.joantolos.kata.social.networking.junit.ui.UserInterface;
+import com.joantolos.kata.social.networking.command.Command;
+import com.joantolos.kata.social.networking.command.CommandFactory;
+import com.joantolos.kata.social.networking.domain.User;
+import com.joantolos.kata.social.networking.ui.UserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
