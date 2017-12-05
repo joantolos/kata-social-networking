@@ -5,3 +5,6 @@
 /tomcat.*
 /.idea
 /*.iml
+out
+gradle
+.gradle
