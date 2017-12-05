@@ -6,14 +6,14 @@ I found the exercise interesting and this is my implementation in Java.
 
 To run the build with test coverage:
 
-    mvn clean jacoco:prepare-agent install jacoco:report
+    ./gradlew clean build jacocoTestReport
     
-You will find the coverage report on /target/site/jacoco/index.html
+You will find the coverage report on _kata-social-networking/build/jacoco/reports/coverage/html/index.html_
 
 You can run the TwitterApp class on your IDE or by console:
 
-    mvn clean install
-    java -jar target/kata-social-networking-1.0.jar
+    ./gradlew fatJar
+    java -jar build/libs/kata-social-networking-all-1.0.jar
     
 You can run the following scenarios with the expected results:
 
