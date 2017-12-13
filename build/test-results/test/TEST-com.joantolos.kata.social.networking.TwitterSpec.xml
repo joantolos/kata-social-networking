@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.joantolos.kata.social.networking.TwitterSpec" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-12-13T09:23:26" hostname="Joans-MacBook-Pro.local" time="7.678">
+  <properties/>
+  <testcase name="Twitter should post" classname="com.joantolos.kata.social.networking.TwitterSpec" time="1.595"/>
+  <testcase name="Twitter should read" classname="com.joantolos.kata.social.networking.TwitterSpec" time="1.539"/>
+  <testcase name="Twitter should follow" classname="com.joantolos.kata.social.networking.TwitterSpec" time="1.513"/>
+  <testcase name="Twitter should show wall" classname="com.joantolos.kata.social.networking.TwitterSpec" time="1.515"/>
+  <testcase name="Twitter should print result" classname="com.joantolos.kata.social.networking.TwitterSpec" time="1.515"/>
+  <system-out><![CDATA[Joan -> Hello there]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
